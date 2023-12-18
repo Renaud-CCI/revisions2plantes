@@ -1,0 +1,24 @@
+{
+  "01": {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Elytrigia_repens_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-203.jpg/240px-Elytrigia_repens_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-203.jpg",
+    "name": "Chiendent",
+    "latin": "Elymus repens"
+  },
+  "02": {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Illustration_Convolvulus_arvensis0.jpg/320px-Illustration_Convolvulus_arvensis0.jpg",
+    "name": "Liseron des champs",
+    "latin": "Convolvulus arvensis"
+  },
+  "03": {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Illustration_Plantago_major0_clean.jpg/240px-Illustration_Plantago_major0_clean.jpg",
+    "name": "Plantain Majeur",
+    "latin": "Plantago major"
+  },
+  "04": {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Plantago_lanceolata_Sturm61.jpg/240px-Plantago_lanceolata_Sturm61.jpg",
+    "name": "Plantain Lancéolé",
+    "latin": "Plantago lanceolata"
+  }
+}
+
+
