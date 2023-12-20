@@ -8,8 +8,12 @@
       </div>
 
       <div v-if="!recto" class="verso flex flex-col items-center justify-center">
-        <h1 class="text-3xl mb-8">{{ adventices.name }}</h1>
-        <h2 class="text-xl italic">{{ adventices.latin }}</h2>
+        <h1 class="text-4xl mb-8 text-center">{{ adventices.name }}</h1>
+        <h2 class="text-2xl italic text-center">{{ adventices.latin }}</h2>
+        <p class="text-lg mt-16 text-neutral-500 text-center">famille :</p>
+        <p class="text-xl text-center">{{ adventices.family }}</p>
+        <p class="text-lg mt-4 text-neutral-500 text-center">type :</p>
+        <p class="text-xl text-center">{{ adventices.type }}</p>
       </div>
 
     </div>
