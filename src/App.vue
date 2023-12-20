@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center">
+  <div class="flex justify-center items-center mt-6">
     <button class="text-white bg-neutral-500 px-6 py-2 rounded" @click="refreshPage">Réinitialiser</button>
   </div>
 
