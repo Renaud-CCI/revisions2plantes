@@ -1,209 +1,209 @@
 {
   "01": {
-    "image": "https://www.wildflowersprovence.fr/media/plants/amaranthus-retroflexus-7-2edwa.jpg?v=1629386497",
+    "image": "amaranthe",
     "name": "Amaranthe",
     "latin": "Amaranthus retroflexus",
     "family": "Amaranthacées",
     "type": "Annuelle"
   },
   "02": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Chenopodium_album_Sturm27.jpg/310px-Chenopodium_album_Sturm27.jpg",
+    "image": "chenopode",
     "name": "Chénopode blanc",
     "latin": "Chenopodium album",
     "family": "Amaranthacées",
     "type": "Annuelle"
   },
   "03": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/0/04/Ambrosia_artemisiifolia_10444.jpg",
+    "image": "ambroisie",
     "name": "Ambroisie",
     "latin": "Ambrosia artemisiifolia",
     "family": "Asteracées",
     "type": "Annuelle"
   },
   "04": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Illustration_Senecio_vulgaris0.jpg/170px-Illustration_Senecio_vulgaris0.jpg",
+    "image": "senecon",
     "name": "Sénéçon",
     "latin": "Senecio vulgaris",
     "family": "Asteracées",
     "type": "Annuelle"
   },
   "05": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Illustration_Sonchus_arvensis0.jpg/240px-Illustration_Sonchus_arvensis0.jpg",
+    "image": "laiteron",
     "name": "Laiteron des champs",
     "latin": "Sonchus arvensis",
     "family": "Asteracées",
     "type": "Annuelle"
   },
   "06": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Matricaria_recutita_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-091.jpg",
+    "image": "matricaire",
     "name": "Matricaire",
     "latin": "Matricaria recutita",
     "family": "Asteracées",
     "type": "Annuelle"
   },
   "07": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Taraxacum_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-135.jpg/800px-Taraxacum_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-135.jpg",
+    "image": "pissenlit",
     "name": "Pissenlit",
     "latin": "Taraxacum officinalis",
     "family": "Asteracées",
     "type": "Vivace"
   },
   "08": {
-    "image": "https://www.lestaxinomes.org/IMG/jpg/galinsoga_cilie_20160626.jpg",
+    "image": "galinsoga",
     "name": "Galinsoga",
     "latin": "Galinsoga ciliata",
     "family": "Asteracées",
     "type": "Annuelle"
   },
   "09": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Illustration_Cirsium_arvense0.jpg/220px-Illustration_Cirsium_arvense0.jpg",
+    "image": "chardon",
     "name": "Chardon des champs",
     "latin": "Circium arvense",
     "family": "Asteracées",
     "type": "Vivace"
   },
   "10": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Capsella_bursa_pastoris_lomme.jpg",
+    "image": "bourse",
     "name": "Bourse à pasteur",
     "latin": "Capsella bursa pastoris",
     "family": "Brassicacées",
     "type": "Annuelle"
   },
   "11": {
-    "image": "https://imgproxy.infoflora.ch/jflOJJx-IJMVdjW2ch4_ZQ/rs:fit:1000:800:1/g:ce/aHR0cHM6Ly93d3cuaW5mb2Zsb3JhLmNoL2ZyLy9hc3NldHMvZGJfZG9jL2F0bGFzRmxvcmVWYXVkb2lzZS8yMDIzMDMyMV9pbXBvcnRfQXRsYXNGbG9yZVZhdWRvaXNlX0NIQi9DYXJkYW1pbmUtaGlyc3V0YV9Cb3JuYW5kLUNocmlzdG9waGVfMjAwMl9kaWEyMDAyXzAwNTdfMS5qcGc.jpg",
+    "image": "cardamine",
     "name": "Cardamine hérissée",
     "latin": "Cardamine hirsuta",
     "family": "Brassicacées",
     "type": "Annuelle"
   },
   "12": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Stellaria_media_v%C3%A5tarv.jpg",
+    "image": "mouron",
     "name": "Mouron des oiseaux",
     "latin": "Stellaria media",
     "family": "Caryophyllacées",
     "type": "Annuelle"
   },
   "13": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Illustration_Convolvulus_arvensis0.jpg/240px-Illustration_Convolvulus_arvensis0.jpg",
+    "image": "liseron",
     "name": "Liseron des champs",
     "latin": "Convolvulus arvensis",
     "family": "Convolvulacées",
     "type": "Vivace"
   },
   "14": {
-    "image": "https://imgproxy.infoflora.ch/SF1mfxuaqMInQo-QHad2sQ/rs:fit:1000:800:1/g:ce/aHR0cHM6Ly93d3cuaW5mb2Zsb3JhLmNoL2ZyLy9hc3NldHMvZGJfZG9jL0ZyYW5jb2lzZUFsYXNrZXIvZnJhbmNvaXNlYWxzYWtlcl9CT1RfSU5GT0ZMT1JBX0FVU1dBSEwvNzkxX0ZBNDAyMjkuanBn.jpg",
+    "image": "euphorbe",
     "name": "Euphorbe réveil matin",
     "latin": "Euphorbia helioscopia",
     "family": "Euphorbiacées",
     "type": "Vivace"
   },
   "15": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mercurialis_annua_2005.07.11_11.37.49-p7110221.jpg/220px-Mercurialis_annua_2005.07.11_11.37.49-p7110221.jpg",
+    "image": "mercuriale",
     "name": "Mercuriale",
     "latin": "Mercurialis annua",
     "family": "Euphorbiacées",
     "type": "Annuelle"
   },
   "16": {
-    "image": "https://imgproxy.infoflora.ch/yeQDcfHkzJXxvIWOofHtrA/rs:fill:400:400:1/g:sm/aHR0cHM6Ly93d3cuaW5mb2Zsb3JhLmNoL2ZyLy9hc3NldHMvZGJfZG9jL3NwZWNpZXMvdGF4YV9pbWFnZXMvMjAxMi8wNi8xOS8yMDEyMDYxOTIzMzIyOC1kMWZkMzdlNS5qcGc.jpg",
+    "image": "trefle",
     "name": "Trèfle blanc",
     "latin": "Trifolium repens",
     "family": "Fabacées",
     "type": "Vivace"
   },
   "17": {
-    "image": "https://inpn.mnhn.fr/photos/uploads/webtofs/inpn/1/382581.jpg",
+    "image": "ortie",
     "name": "Ortie",
     "latin": "Urtica dioica",
     "family": "Lamiacées",
     "type": "Vivace"
   },
   "18": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Lamium_purpureum_in_the_spring2.jpg/1200px-Lamium_purpureum_in_the_spring2.jpg",
+    "image": "lamier",
     "name": "Lamier pourpre",
     "latin": "Lamium purpureum",
     "family": "Lamiacées",
     "type": "Vivace"
   },
   "19": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Oxalis_corniculata_in_Talakona_forest%2C_AP_W_IMG_8538.jpg",
+    "image": "oxalis",
     "name": "Oxalis Rampante",
     "latin": "Oxalis cornicule",
     "family": "Oxalydacées",
     "type": "Vivace"
   },
   "20": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Plantago_lanceolata_plant.jpg",
+    "image": "plantainLanceole",
     "name": "Plantain lancéolé",
     "latin": "Plantago lanceolata",
     "family": "Plantaginacées",
     "type": "Vivace"
   },
   "21": {
-    "image": "https://storage.googleapis.com/doctonat-bucket/2020/04/ad8229e3-plantain-majeur.jpg",
+    "image": "plantainMajeur",
     "name": "Plantain majeur",
     "latin": "Plantago major",
     "family": "Plantaginacées",
     "type": "Vivace"
   },
   "22": {
-    "image": "https://imgproxy.infoflora.ch/w7KBBWKsSdCZBbFLRtQFeA/rs:fit:1000:800:1/g:ce/aHR0cHM6Ly93d3cuaW5mb2Zsb3JhLmNoL2ZyLy9hc3NldHMvZGJfZG9jL2F0bGFzRmxvcmVWYXVkb2lzZS8yMDIzMDMyMV9pbXBvcnRfQXRsYXNGbG9yZVZhdWRvaXNlX0NIQi9Qb2EtYW5udWFfQm9ybmFuZC1DaHJpc3RvcGhlXzIwMDJfZGlhMjAwMl8wOTg3XzEuanBn.jpg",
+    "image": "paturin",
     "name": "Paturin annuel",
     "latin": "Poa annua",
     "family": "Poacées",
     "type": "Annuelle"
   },
   "23": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Elytrigia_repens_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-203.jpg/240px-Elytrigia_repens_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-203.jpg",
+    "image": "chiendent",
     "name": "Chiendent",
     "latin": "Elymus repens",
     "family": "Poacées",
     "type": "Vivace"
   },
   "24": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Rumex_obtusifolius_Sturm48.jpg/290px-Rumex_obtusifolius_Sturm48.jpg",
+    "image": "rumex",
     "name": "Rumex",
     "latin": "Rumex obtusifolius",
     "family": "Polygoniacées",
     "type": "Vivace"
   },
   "25": {
-    "image": "https://imgproxy.infoflora.ch/g9E3nEVvVttUt_el0Wr7Dw/rs:fit:1000:800:1/g:ce/aHR0cHM6Ly93d3cuaW5mb2Zsb3JhLmNoL2ZyLy9hc3NldHMvZGJfZG9jL2F0bGFzRmxvcmVWYXVkb2lzZS8yMDIzMDMyMV9pbXBvcnRfQXRsYXNGbG9yZVZhdWRvaXNlX0NIQi9Qb2x5Z29udW0tcGVyc2ljYXJpYV9Cb3JuYW5kLUNocmlzdG9waGVfMjAwMV9kaWEyMDAxXzI4MzMuanBn.jpg",
+    "image": "renouee",
     "name": "Renouée persicaire",
     "latin": "Polygonum persicaria",
     "family": "Polygoniacées",
     "type": "Vivace"
   },
   "26": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Illustration_Portulaca_oleracea0.jpg/1200px-Illustration_Portulaca_oleracea0.jpg",
+    "image": "pourpier",
     "name": "Pourpier",
     "latin": "Portulaca oleracea",
     "family": "Portulacacées",
     "type": "Annuelle"
   },
   "27": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ranunculus_arvensis_%28Acker-Hahnenfu%C3%9F%29_IMG_20823.JPG/1200px-Ranunculus_arvensis_%28Acker-Hahnenfu%C3%9F%29_IMG_20823.JPG",
+    "image": "renoncule",
     "name": "Renoncule des champs",
     "latin": "Ranunculus arvensis",
     "family": "Renonculacées",
     "type": "Vivace"
   },
   "28": {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Potentilla_reptans_%28plant%29.jpg/220px-Potentilla_reptans_%28plant%29.jpg",
+    "image": "potentille",
     "name": "Potentille rampante",
     "latin": "Potentilla reptens",
     "family": "Rosacées",
     "type": "Vivace"
   },
   "29": {
-    "image": "https://imgproxy.infoflora.ch/q4ybXxraOUjYaR9Fxet3bw/rs:fit:400:600:1/g:ce/aHR0cHM6Ly93d3cuaW5mb2Zsb3JhLmNoL2ZyLy9hc3NldHMvZGJfZG9jL3NwZWNpZXMvdGF4YV9pbWFnZXMvMjAxMi8wNi8yMC8yMDEyMDYyMDAwMzkxMS0xNmRiYTExNi5qcGc.jpg",
+    "image": "veronique",
     "name": "Véronique de perse",
     "latin": "Veronica persica",
     "family": "Scrophulariacées",
     "type": "Annuelle"
   },
   "30": {
-    "image": "https://c8.alamy.com/compfr/b6acch/la-morelle-noire-solanum-nigrum-illustrations-des-plantes-toxiques-b6acch.jpg",
+    "image": "morelle",
     "name": "Morelle noire",
     "latin": "Solanum nigrum",
     "family": "Solanacées",

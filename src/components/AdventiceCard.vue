@@ -4,7 +4,7 @@
     <div class="card bg-neutral-100 border border-neutral-300 rounded-xl flex flex-col justify-center items-center" @click="flipCard">
 
       <div v-if="recto" class="recto flex flex-col justify-center items-center">
-        <img :src="adventices.image" :alt="adventices.name + '_Img'" class="adventice-image rounded-xl">
+        <img :src="imgSrc" :alt="adventices.name + '_Img'" class="adventice-image rounded-xl">
       </div>
 
       <div v-if="!recto" class="verso flex flex-col items-center justify-center">
@@ -35,7 +35,8 @@ export default {
   },
   data() {
     return {
-      recto: true
+      recto: true,
+      imgSrc: ''
     };
   },
   computed: {
@@ -60,7 +61,15 @@ export default {
           .to(this.$el, { rotationY: 0, duration: 0.3 });
       }
     }
-  }
+  },
+  async created() {
+    const images = import.meta.glob('@/assets/images/plants/*');
+    console.log(images)
+    const randomImages = [`${this.adventice.image}1`, `${this.adventice.image}2`, `${this.adventice.image}3`];
+    const randomImage = randomImages[Math.floor(Math.random() * randomImages.length)];
+    const module = await images[`/src/assets/images/plants/${randomImage}.jpeg`]();
+    this.imgSrc = module.default;
+  },
 }
 </script>
 
