@@ -93,6 +93,6 @@ export default {
 .refresh-div button {
   margin-top: 1rem;
   height: 2rem;
-  transition: opacity 0.3s, margin-top 0.3s, height 0.3s;
+  transition: opacity 0.5s, margin-top 0.5s, height 0.5s;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="adventice-card flex flex-col justify-center items-center py-6">
 
-    <div class="card bg-sky-100 border border-neutral-300 rounded-xl flex flex-col justify-center items-center" @click="flipCard">
+    <div class="card bg-sky-100 rounded-xl flex flex-col justify-center items-center" @click="flipCard">
 
       <div v-if="recto" class="recto flex flex-col justify-center items-center">
         <img v-if="imgLoad" :src="imgSrc" :alt="adventices.name + '_Img'" class="adventice-image rounded-xl">

@@ -1,7 +1,7 @@
 <template>
   <section class="grid grid-cols-5 justify-center items-center mx-6">
 
-    <div @click="clicOnInput" class="option-text revisions col-span-2 text-end pe-1 cursor-pointer">
+    <div @click="clicOnInput" class="option-text revisions col-span-2 text-end cursor-pointer">
       {{ "Révisions".toUpperCase() }}
     </div>
      
@@ -14,7 +14,7 @@
         </div>  
       </div>
 
-    <div @click="clicOnInput" class="option-text evaluation col-span-2 text-start ps-1 cursor-pointer">
+    <div @click="clicOnInput" class="option-text evaluation col-span-2 text-start cursor-pointer">
       {{ "évaluation".toUpperCase() }}
     </div>
 
@@ -47,10 +47,10 @@ export default {
       switch (this.isOn) {
         case true:
           gsap.to('.evaluation', { color: '#f59e0b', duration: 0.3 });
-          gsap.to('.revisions', { color: '#d4d4d4', duration: 0.3 });
+          gsap.to('.revisions', { color: '#e5e5e5', duration: 0.3 });
           break;
         case false:
-          gsap.to('.evaluation', { color: '#d4d4d4', duration: 0.3 });
+          gsap.to('.evaluation', { color: '#e5e5e5', duration: 0.3 });
           gsap.to('.revisions', { color: '#0284c7', duration: 0.3 });
           break;
       }
@@ -141,10 +141,16 @@ label {
   font-size: 1.4rem;
   font-family: sans-serif;
   font-weight: bold;
-  color: #d4d4d4; //neutral-300
+  color: #e5e5e5; //neutral-200
 
-  .revisions{
+  &.evaluation{
+    color: #f59e0b; //amber-500
+    padding-left: 1rem;
+  }
+
+  &.revisions{
     color: #0284c7; //sky-600
+    padding-right: 1rem;
   }
 }
 
@@ -161,6 +167,17 @@ label {
       }
     }
   }
+  .option-text {
+  font-size: 1.4rem;
+
+  &.evaluation{
+    padding-left: 0.1rem;
+  }
+
+  &.revisions{
+    padding-right: 0.1rem;
+  }
+}
 }
 
 
