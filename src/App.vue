@@ -1,5 +1,10 @@
 <template>
   <section class="">
+
+    <div class="score-div">
+      <ScoreContainer :isRevision="isRevision" />
+    </div>
+
     <div class="pt-6">
       <ToggleSwitch @toggle-mode="handleToggleMode" />
     </div>
@@ -27,6 +32,7 @@
 </template>
 
 <script>
+import ScoreContainer from './components/ScoreContainer.vue';
 import ToggleSwitch from './components/ToggleSwitch.vue';
 import AdventiceCard from './components/AdventiceCard.vue';
 import AdventiceQuizzCardContainer from './components/AdventiceQuizzCard/AdventiceQuizzCardContainer.vue';
@@ -36,6 +42,7 @@ import adventices from './assets/adventices.json';
 export default {
   name: 'App',
   components: {
+    ScoreContainer,
     ToggleSwitch,
     AdventiceCard,
     ContactForm,
