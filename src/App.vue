@@ -13,9 +13,9 @@
       <button class="text-white bg-sky-600 rounded" @click="refreshPage">Réinitialiser</button>
     </div>
 
-      <AdventiceCard v-if="isRevision" v-for="(adventice, key) in adventicesArray" :key="key" :adventice="adventice" />
+      <AdventiceCard v-if="isRevision" v-for="(adventice, index) in adventicesArray" :key="key" :adventice="adventice" />
 
-      <AdventiceQuizzCardContainer v-if="!isRevision" v-for="(adventice, key) in adventicesArray" :key="key" :adventice="adventice" />
+      <AdventiceQuizzCardContainer v-if="!isRevision" v-for="(adventice, index) in adventicesArray" :key="index" :index="index" :adventicesArray="adventicesArray" />
     
     <div class="refresh-div flex justify-center items-center">
       <button class="text-white bg-sky-600 px-4 py-1 rounded" @click="refreshPage">Réinitialiser</button>

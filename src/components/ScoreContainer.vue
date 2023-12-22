@@ -1,11 +1,12 @@
 <template>
   <div id="score-container" :class="{ 'is-revision': isRevision }" class="text-white bg-amber-500 flex justify-center items-center">
-    <p class="font-bold">Score : {{ isRevision ? 'R' : 'E'}}</p>
+    <p class="font-bold">Score : {{ score }} / {{ questions }} </p>
   </div>
 </template>
 
 <script>
-import { gsap } from 'gsap';
+import { useQuizzStore } from '@/stores/quizzStore';
+import { computed } from 'vue';
 
 
 export default {
@@ -20,6 +21,16 @@ export default {
     return {
     };
   },
+  setup() {
+    const quizzStore = useQuizzStore();
+    const score = computed(() => quizzStore.score);
+    const questions = computed(() => quizzStore.questions);
+
+    return {
+      score,
+      questions
+    }
+  },
   computed: {
   },
   methods: {
@@ -30,6 +41,7 @@ export default {
 <style scoped lang="scss">
 #score-container {
   position: fixed;
+  z-index: 5;
   width: 20vw;
   height: 55px;
   border-radius: 0 0 10px 0;
@@ -43,7 +55,7 @@ export default {
 
 
   @media screen and (max-width: 768px) {
-    width: 35vw;
+    width: 38vw;
     height: 35px;
     font-size: 1.2rem;
 

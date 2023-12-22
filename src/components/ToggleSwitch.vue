@@ -39,7 +39,6 @@ export default {
   methods: {
     toggleMode() {
       this.isOn = !this.isOn;
-      console.log(this.isOn);
       this.$emit('toggle-mode', this.isOn);
       this.toggleColor();
     },
