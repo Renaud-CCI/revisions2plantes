@@ -138,19 +138,21 @@ label {
 
 // Option Text
 .option-text {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-family: sans-serif;
   font-weight: bold;
   color: #e5e5e5; //neutral-200
 
   &.evaluation{
     color: #f59e0b; //amber-500
-    padding-left: 1rem;
+    padding-left: 0;
+    margin-left: -4rem;
   }
 
   &.revisions{
     color: #0284c7; //sky-600
-    padding-right: 1rem;
+    padding-right: 0;
+    margin-right: -4rem;
   }
 }
 
@@ -172,10 +174,12 @@ label {
 
   &.evaluation{
     padding-left: 0.1rem;
+    margin-left: 0;
   }
 
   &.revisions{
     padding-right: 0.1rem;
+    margin-right: 0;
   }
 }
 }
