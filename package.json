@@ -11,6 +11,8 @@
   "dependencies": {
     "gsap": "^3.12.4",
     "pinia": "^2.1.7",
+    "scroll-into-view": "^1.16.2",
+    "smoothscroll-polyfill": "^0.4.4",
     "vue": "^3.3.11"
   },
   "devDependencies": {

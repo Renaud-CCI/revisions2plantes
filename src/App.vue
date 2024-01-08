@@ -18,7 +18,13 @@
       <AdventiceQuizzCardContainer v-if="!isRevision" v-for="(adventice, index) in adventicesArray" :key="index" :index="index" :adventicesArray="adventicesArray" />
     
     <div class="refresh-div flex justify-center items-center">
-      <button class="text-white bg-sky-600 px-4 py-1 rounded" @click="refreshPage">Réinitialiser</button>
+      <button 
+  class="text-white px-4 py-1 rounded" 
+  :class="isRevision ? 'bg-sky-600' : 'bg-amber-500'" 
+  @click="refreshClick"
+>
+  Réinitialiser
+</button>
     </div>
 
     <div class="flex justify-center items-center">
@@ -32,6 +38,8 @@
 </template>
 
 <script>
+import smoothscroll from 'smoothscroll-polyfill';
+smoothscroll.polyfill();
 import ScoreContainer from './components/ScoreContainer.vue';
 import ToggleSwitch from './components/ToggleSwitch.vue';
 import AdventiceCard from './components/AdventiceCard.vue';
@@ -75,6 +83,15 @@ export default {
     },
     refreshPage() {
       window.location.reload();
+    },
+    scrollToTop() {
+         window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    refreshClick() {
+        this.scrollToTop();
+  setTimeout(() => {
+    this.refreshPage();
+  }, 800);
     },
     handleToggleMode() {
       this.isRevision = !this.isRevision;
