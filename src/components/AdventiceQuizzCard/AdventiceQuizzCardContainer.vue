@@ -63,30 +63,7 @@ export default {
     };
   },
   mounted() {
-    console.log('quizzCard', this.adventicesArray[this.index]);
-    const entries = Object.entries(this.adventicesArray[this.index]);
-    const randomIndex = Math.floor(Math.random() * (entries.length - 1)) + 1; // ne doit pas être égal à 0 (il s'agit de l'image)
-    const randomEntry = entries[randomIndex];
-    this.questionTitle = randomEntry[0];
-    this.goodAnswer = randomEntry[1];
-    console.log('quizzCard2', randomEntry, ' ', this.questionTitle , ' ', this.goodAnswer);
-
-    let otherValues;
-    if (randomIndex === 4) {
-      this.badAnswers = ['Annuelle', 'Vivace'].filter(value => value !== randomEntry[1]);
-    } else {
-      const otherObjects = this.adventicesArray.filter((_, i) => i !== this.index);
-      const randomIndices = [];
-      while (randomIndices.length < 2) {
-        const random = Math.floor(Math.random() * otherObjects.length);
-        if (!randomIndices.includes(random)) {
-          randomIndices.push(random);
-        }
-      }
-      this.badAnswers = randomIndices.map(i => otherObjects[i][randomEntry[0]]);
-    }
-    console.log('otherValues', this.badAnswers);
-    this.shuffledAnswers = this.shuffleArray([this.goodAnswer, ...this.badAnswers]);
+    this.getQuizzData();
   },
   computed: {
     adventices() {
@@ -127,6 +104,44 @@ export default {
           })
           .to(this.$el, { rotationY: 0, duration: 0.3 });
       }
+    },
+    getQuizzData() {
+      const currentAdventice = this.adventicesArray[this.index];
+      const entries = Object.entries(currentAdventice);
+      const randomIndex = this.getRandomIndex(entries.length); // ne doit pas être égal à 0 (il s'agit de l'image)
+      const randomEntry = entries[randomIndex];
+
+      this.questionTitle = randomEntry[0];
+      this.goodAnswer = randomEntry[1];
+
+      this.badAnswers = randomIndex === 4 ? this.getFixedBadAnswers(randomEntry[1]) : this.getRandomBadAnswers(randomEntry[0]);
+
+      this.shuffledAnswers = this.shuffleArray([this.goodAnswer, ...this.badAnswers]);
+    },
+    getRandomIndex(length) {
+      return Math.floor(Math.random() * (length - 1)) + 1;
+    },
+
+    getFixedBadAnswers(goodAnswer) {
+      return ['Annuelle', 'Vivace'].filter(value => value !== goodAnswer);
+    },
+
+    getRandomBadAnswers(questionTitle) {
+      const otherObjects = this.adventicesArray.filter((_, i) => i !== this.index);
+      const randomIndices = this.getRandomIndices(otherObjects, questionTitle);
+      return randomIndices.map(i => otherObjects[i][questionTitle]);
+    },
+
+    getRandomIndices(otherObjects, questionTitle) {
+      const indices = [];
+      while (indices.length < 2) {
+        const random = Math.floor(Math.random() * otherObjects.length);
+        const potentialBadAnswer = otherObjects[random][questionTitle];
+        if (!indices.includes(random) && potentialBadAnswer !== this.goodAnswer) {
+          indices.push(random);
+        }
+      }
+      return indices;
     },
     shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
