@@ -2,8 +2,8 @@
   <section class="test">
 
     <nav class="fixed top-0 left-0 w-full bg-zinc-100 z-50">
-      <button @click="togglePage">🌿 Adventices</button>
-      <button @click="togglePage">Ornamentales 🪴</button>
+      <button id="adventices-button" @click="togglePage" :class="{ 'selected-button': adventicesPage }">Adventices</button>
+      <button id="ornementals-button" @click="togglePage" :class="{ 'selected-button': !adventicesPage }">Ornementales</button>
     </nav>
 
     <div id="slide-container">
@@ -47,43 +47,90 @@ export default {
 </script>
 
 <style scoped>
-.test {
-  background-color: blue;
-  overflow-x: hidden;
+
+@font-face {
+  font-family: 'Herb';
+  src: url('./assets/polices/Herb.ttf') format('truetype');
 }
 
-  nav {
-    height: 2rem; 
+@font-face {
+  font-family: 'Flower';
+  src: url('./assets/polices/Flower.ttf') format('truetype');
+}
+
+nav {
+  height: 3rem;
+  padding: 0 30%;
+
+  button {
+    width: 50%;
+    height: 3rem;
+    color: #e4e4e7; /* tailwind zinc-200 */
+    transition: color 0.4s ease-in-out;
   }
 
-  
-  #slide-container {
-    background-color: yellow;
-    overflow-x: hidden;
-    height: auto;
-  
-
-    .adventices-in, .ornamentals-in {
-    width: 100vw;
-    height: auto;
-    position: relative;
-    left: 0;
-    transition: left 0.6s ease-in-out, width 0.6s ease-in-out;
+  #adventices-button {
+    font-size: 1.8rem;
+    font-family: 'Herb';
   }
+
+  #ornementals-button {
+    font-size: 2rem;
+    font-family: 'Flower';
+  }
+
+  .selected-button {
+    color: #4d7c0f; /* tailwind lime-700 */
+  }
+}
+
+  
+#slide-container {
+  overflow-x: hidden;
+  height: auto;
+
+
+  .adventices-in, .ornamentals-in {
+  width: 100vw;
+  height: auto;
+  position: relative;
+  left: 0;
+  transition: left 0.6s ease-in-out, width 0.3s ease-in-out;
+}
 
   .adventices-out {
     width: 0;
     position: relative;
     left: -100vw;
-    transition: left 0.6s ease-in-out, width 0.6s ease-in-out;
+    transition: left 0.6s ease-in-out, width 0.3s ease-in-out;
   }
 
   .ornamentals-out {
     width: 0;
     position: relative;
     left: 100vw;
-    transition: left 0.6s ease-in-out, width 0.6s ease-in-out;
+    transition: left 0.6s ease-in-out, width 0.3s ease-in-out;
   }
 }
+
+@media screen and (max-width: 768px) {
+  nav {
+    height: 3rem; 
+    padding: 0;
+
+    button {
+      width: 50%;
+      height: 3rem;
+    }
+
+    #adventices-button {
+      font-size: 1.8rem;
+    }
+
+    #ornementals-button {
+      font-size: 2rem;
+    }
+  }
+} 
 
 </style>

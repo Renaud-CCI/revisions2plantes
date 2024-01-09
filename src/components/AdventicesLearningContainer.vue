@@ -110,7 +110,7 @@ export default {
 
 <style scoped>
 .container {
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 
 .refresh-div button {
