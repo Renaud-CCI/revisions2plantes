@@ -1,5 +1,5 @@
 <template>
-  <div id="score-container" :class="{ 'is-revision': isRevision }" class="text-white bg-amber-500 flex justify-center items-center">
+  <div id="score-container" :class="{ 'is-revision': OrnamentalIsRevision }" class="text-white bg-amber-500 flex justify-center items-center">
     <p class="font-bold">Score : {{ score }} / {{ questions }} </p>
   </div>
 </template>
@@ -10,9 +10,9 @@ import { computed } from 'vue';
 
 
 export default {
-  name: 'ScoreContainer',
+  name: 'OrnamentalScoreContainer',
   props: {
-    isRevision: {
+    OrnamentalIsRevision: {
       type: Boolean,
       required: true
     }

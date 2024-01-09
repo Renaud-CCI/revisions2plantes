@@ -1,20 +1,20 @@
 <template>
   <section class="grid grid-cols-5 justify-center items-center mx-6">
 
-    <div @click="clicOnInput" class="option-text revisions col-span-2 text-end cursor-pointer">
+    <div @click="clicOnInput" class="option-text ornamental-revisions col-span-2 text-end cursor-pointer">
       {{ "Révisions".toUpperCase() }}
     </div>
      
       <div class="wrap col-span-1 flex justify-center items-center">
         <div class="toggle">
           <div class="input-wrap">
-            <input @click="toggleMode" id="input-1" type="checkbox">
-            <label for="input-1">Select</label>
+            <input @click="toggleMode" id="input-2" type="checkbox">
+            <label for="input-2">Select</label>
           </div>
         </div>  
       </div>
 
-    <div @click="clicOnInput" class="option-text evaluation col-span-2 text-start cursor-pointer">
+    <div @click="clicOnInput" class="option-text ornamental-evaluation col-span-2 text-start cursor-pointer">
       {{ "évaluation".toUpperCase() }}
     </div>
 
@@ -27,10 +27,10 @@
 import { gsap } from 'gsap';
 
 export default {
-  name: 'ToggleSwitch',
+  name: 'OrnamentalToggleSwitch',
   data() {
     return {
-      isOn: false
+      OrnamentalIsOn: false
     };
   },
   mounted () {
@@ -38,24 +38,24 @@ export default {
   },
   methods: {
     toggleMode() {
-      this.isOn = !this.isOn;
-      this.$emit('toggle-mode', this.isOn);
+      this.OrnamentalIsOn = !this.OrnamentalIsOn;
+      this.$emit('ornamental-toggle-mode', this.OrnamentalIsOn);
       this.toggleColor();
     },
     toggleColor() {
-      switch (this.isOn) {
+      switch (this.OrnamentalIsOn) {
         case true:
-          gsap.to('.evaluation', { color: '#f59e0b', duration: 0.3 });
-          gsap.to('.revisions', { color: '#e5e5e5', duration: 0.3 });
+          gsap.to('.ornamental-evaluation', { color: '#f59e0b', duration: 0.3 });
+          gsap.to('.ornamental-revisions', { color: '#e5e5e5', duration: 0.3 });
           break;
         case false:
-          gsap.to('.evaluation', { color: '#e5e5e5', duration: 0.3 });
-          gsap.to('.revisions', { color: '#0284c7', duration: 0.3 });
+          gsap.to('.ornamental-evaluation', { color: '#e5e5e5', duration: 0.3 });
+          gsap.to('.ornamental-revisions', { color: '#0284c7', duration: 0.3 });
           break;
       }
     },
     clicOnInput() {
-      document.getElementById('input-1').click();
+      document.getElementById('input-2').click();
     }
   }
 };
@@ -142,13 +142,13 @@ label {
   font-weight: bold;
   color: #e5e5e5; //neutral-200
 
-  &.evaluation{
+  &.ornamental-evaluation{
     color: #f59e0b; //amber-500
     padding-left: 0;
     margin-left: -4rem;
   }
 
-  &.revisions{
+  &.ornamental-revisions{
     color: #0284c7; //sky-600
     padding-right: 0;
     margin-right: -4rem;
@@ -171,12 +171,12 @@ label {
   .option-text {
   font-size: 1.4rem;
 
-  &.evaluation{
+  &.ornamental-evaluation{
     padding-left: 0.1rem;
     margin-left: 0;
   }
 
-  &.revisions{
+  &.ornamental-revisions{
     padding-right: 0.1rem;
     margin-right: 0;
   }

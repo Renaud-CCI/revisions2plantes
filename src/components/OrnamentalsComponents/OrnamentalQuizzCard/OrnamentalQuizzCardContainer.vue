@@ -18,13 +18,20 @@
       </div>
 
       <div v-if="!recto" class="verso flex flex-col items-center justify-center">
-        <p class="response-logo mb-8">{{ responseLogo }}</p>
-        <h1 class="text-4xl mb-8 text-center">{{ adventices.name }}</h1>
-        <h2 class="text-2xl italic text-center">{{ adventices.latin }}</h2>
-        <p class="text-lg mt-16 text-neutral-500 text-center">famille :</p>
-        <p class="text-xl text-center">{{ adventices.family }}</p>
-        <p class="text-lg mt-4 text-neutral-500 text-center">type :</p>
-        <p class="text-xl text-center">{{ adventices.type }}</p>
+        <p class="response-logo mb-4">{{ responseLogo }}</p>
+         <h1 class="text-3xl mb-4 text-center" v-if="adventices.name">{{ adventices.name }}</h1>
+        <p class="text-base mt-4 text-neutral-500 text-center" v-if="adventices.gender">genre :</p>
+        <p class="text-lg text-center" v-if="adventices.gender">{{ adventices.gender }}</p>
+        <p class="text-base mt-4 text-neutral-500 text-center" v-if="adventices.species">espèce :</p>
+        <p class="text-lg text-center" v-if="adventices.species">{{ adventices.species }}</p>
+        <p class="text-base mt-4 text-neutral-500 text-center" v-if="adventices.variety">variété :</p>
+        <p class="text-lg text-center" v-if="adventices.variety">{{ adventices.variety }}</p>
+        <p class="text-base mt-4 text-neutral-500 text-center" v-if="adventices.family">famille :</p>
+        <p class="text-lg text-center" v-if="adventices.family">{{ adventices.family }}</p>
+        <p class="text-base mt-4 text-neutral-500 text-center" v-if="adventices.type">type :</p>
+        <p class="text-lg text-center" v-if="adventices.type">{{ adventices.type }}</p>
+        <p class="text-base mt-4 text-neutral-500 text-center" v-if="adventices.comments">caractéristiques :</p>
+        <p class="text-lg text-center" v-if="adventices.comments">{{ adventices.comments }}</p>
       </div>
 
     </div>
@@ -38,9 +45,9 @@ import { useQuizzStore } from '@/stores/quizzStore';
 
 
 export default {
-  name: 'AdventiceQuizzCardContainer',
+  name: 'OrnamentalQuizzCardContainer',
   props: {
-    adventicesArray: {
+    ornamentalsArray: {
       type: Object,
       required: true
     },
@@ -67,15 +74,18 @@ export default {
   },
   computed: {
     adventices() {
-      return this.adventicesArray[this.index];
+      return this.ornamentalsArray[this.index];
     },
     displayableQuestionTitle() {
       switch (this.questionTitle) {
         case 'name':
           return 'Nom commun :';
           break;
-        case 'latin':
-          return 'Nom latin :';
+        case 'gender':
+          return 'Genre :';
+          break;
+        case 'species':
+          return 'Espèce :';
           break;
         case 'family':
           return 'Famille :';
@@ -106,15 +116,19 @@ export default {
       }
     },
     getQuizzData() {
-      const currentAdventice = this.adventicesArray[this.index];
-      const entries = Object.entries(currentAdventice);
-      const randomIndex = this.getRandomIndex(entries.length); // ne doit pas être égal à 0 (il s'agit de l'image)
-      const randomEntry = entries[randomIndex];
+      const currentOrnamental = this.ornamentalsArray[this.index];
+      const entries = Object.entries(currentOrnamental);
+      let randomIndex;
+      let randomEntry;
+      do {
+        randomIndex = this.getRandomIndex(entries.length);
+        randomEntry = entries[randomIndex];
+      } while (randomIndex === 0 || randomIndex === 4 || randomIndex === 7 || randomEntry === null);
 
       this.questionTitle = randomEntry[0];
       this.goodAnswer = randomEntry[1];
 
-      this.badAnswers = randomIndex === 4 ? this.getFixedBadAnswers(randomEntry[1]) : this.getRandomBadAnswers(randomEntry[0]);
+      this.badAnswers = randomIndex === 6 ? this.getFixedBadAnswers(randomEntry[1]) : this.getRandomBadAnswers(randomEntry[0]);
 
       this.shuffledAnswers = this.shuffleArray([this.goodAnswer, ...this.badAnswers]);
     },
@@ -127,7 +141,7 @@ export default {
     },
 
     getRandomBadAnswers(questionTitle) {
-      const otherObjects = this.adventicesArray.filter((_, i) => i !== this.index);
+      const otherObjects = this.ornamentalsArray.filter((_, i) => i !== this.index);
       const randomIndices = this.getRandomIndices(otherObjects, questionTitle);
       return randomIndices.map(i => otherObjects[i][questionTitle]);
     },
@@ -177,12 +191,15 @@ export default {
     }
   },
   async created() {
-    const images = import.meta.glob('@/assets/images/plants/*');
-    const randomImages = [`${this.adventicesArray[this.index].image}1`, `${this.adventicesArray[this.index].image}2`, `${this.adventicesArray[this.index].image}3`];
-    const randomImage = randomImages[Math.floor(Math.random() * randomImages.length)];
-    const module = await images[`/src/assets/images/plants/${randomImage}.jpeg`]();
-    this.imgSrc = module.default;
-    this.imgLoad = true;
+    try {
+        const images = import.meta.glob('@/assets/images/ornamentals/*');
+        const module = await images[`/src/assets/images/ornamentals/${this.ornamentalsArray[this.index].image}.jpg`]();
+        this.imgSrc = module.default;
+    } catch (error) {
+        this.imgSrc = null;
+    } finally {
+        this.imgLoad = true;
+    }
   },
 }
 </script>

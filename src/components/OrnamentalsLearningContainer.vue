@@ -2,25 +2,25 @@
   <section class="container">
 
     <div class="score-div">
-      <ScoreContainer :isRevision="isRevision" />
+      <OrnamentalScoreContainer :OrnamentalIsRevision="OrnamentalIsRevision" />
     </div>
 
     <div class="pt-6">
-      <ToggleSwitch @toggle-mode="handleToggleMode" />
+      <OrnamentalToggleSwitch @ornamental-toggle-mode="handleToggleMode" />
     </div>
 
     <div class="refresh-div flex justify-center items-center">
       <button class="text-white bg-sky-600 rounded" @click="refreshPage">Réinitialiser</button>
     </div>
 
-      <OrnamentalCard v-if="isRevision" v-for="(ornamental, index) in ornamentalsArray" :key="key" :ornamental="ornamental" />
+      <OrnamentalCard v-if="OrnamentalIsRevision" v-for="(ornamental, index) in ornamentalsArray" :key="key" :ornamental="ornamental" />
 
-      <OrnamentalQuizzCardContainer v-if="!isRevision" v-for="(ornamental, index) in ornamentalsArray" :key="index" :index="index" :ornamentalsArray="adventicesArray" />
+      <OrnamentalQuizzCardContainer v-if="!OrnamentalIsRevision" v-for="(ornamental, index) in ornamentalsArray" :key="index" :index="index" :ornamentalsArray="ornamentalsArray" />
     
     <div class="refresh-div flex justify-center items-center">
       <button 
         class="text-white px-4 py-1 rounded" 
-        :class="isRevision ? 'bg-sky-600' : 'bg-amber-500'" 
+        :class="OrnamentalIsRevision ? 'bg-sky-600' : 'bg-amber-500'" 
         @click="refreshClick"
       >
         Réinitialiser
@@ -36,8 +36,8 @@
 <script>
 import smoothscroll from 'smoothscroll-polyfill';
 smoothscroll.polyfill();
-import ScoreContainer from './AdventicesComponents/ScoreContainer.vue';
-import ToggleSwitch from './AdventicesComponents/ToggleSwitch.vue';
+import OrnamentalScoreContainer from './OrnamentalsComponents/OrnamentalScoreContainer.vue';
+import OrnamentalToggleSwitch from './OrnamentalsComponents/OrnamentalToggleSwitch.vue';
 import OrnamentalCard from './OrnamentalsComponents/OrnamentalCard.vue';
 import OrnamentalQuizzCardContainer from './OrnamentalsComponents/OrnamentalQuizzCard/OrnamentalQuizzCardContainer.vue';
 import ornamentals from '../assets/ornamentals.json';
@@ -45,15 +45,15 @@ import ornamentals from '../assets/ornamentals.json';
 export default {
   name: 'OrnamentalsLearningContainer',
   components: {
-    ScoreContainer,
-    ToggleSwitch,
+    OrnamentalScoreContainer,
+    OrnamentalToggleSwitch,
     OrnamentalCard,
     OrnamentalQuizzCardContainer
   },
    data() {
     return {
       ornamentalsArray: this.shuffle(Object.values(ornamentals)),
-      isRevision: true,
+      OrnamentalIsRevision: true,
     };
   },
   methods: {
@@ -79,19 +79,19 @@ export default {
       window.location.reload();
     },
     scrollToTop() {
-         window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     },
     refreshClick() {
-        this.scrollToTop();
-  setTimeout(() => {
-    this.refreshPage();
-  }, 800);
+      this.scrollToTop();
+      setTimeout(() => {
+        this.refreshPage();
+      }, 800);
     },
     handleToggleMode() {
-      this.isRevision = !this.isRevision;
+      this.OrnamentalIsRevision = !this.OrnamentalIsRevision;
       const button = document.querySelector('.refresh-div button');
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
-      if (this.isRevision) {
+      if (this.OrnamentalIsRevision) {
         button.style.opacity = "1";
         button.style.marginTop = "1rem";
         button.style.height = isMobile ? "2rem" : "3rem";

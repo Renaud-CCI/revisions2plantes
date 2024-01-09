@@ -71,7 +71,6 @@ export default {
     }
   },
   async created() {
-    console.log(this.ornamental);
     try {
         const images = import.meta.glob('@/assets/images/ornamentals/*');
         const module = await images[`/src/assets/images/ornamentals/${this.ornamental.image}.jpg`]();
