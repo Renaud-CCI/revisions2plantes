@@ -1,5 +1,5 @@
-<template>
-  <section class="container">
+<!-- <template>
+  <section class="">
 
     <div class="score-div">
       <ScoreContainer :isRevision="isRevision" />
@@ -31,6 +31,20 @@
 
   
 
+</template> -->
+
+<template>
+  <section class="container">
+    <h1>Ornamentals</h1>
+    <h1>Ornamentals</h1>
+    <h1>Ornamentals</h1>
+    <h1>Ornamentals</h1>
+    <h1>Ornamentals</h1>
+
+    <div class="contenu-test">
+      <h2>test</h2>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -43,7 +57,7 @@ import AdventiceQuizzCardContainer from './AdventicesComponents/AdventiceQuizzCa
 import adventices from '../assets/adventices.json';
 
 export default {
-  name: 'AdventicesLearningContainer',
+  name: 'OrnamentalsLearningContainer',
   components: {
     ScoreContainer,
     ToggleSwitch,
@@ -111,8 +125,12 @@ export default {
 <style scoped>
 .container {
   padding-top: 2rem;
-}
 
+  .contenu-test {
+    background-color: red;
+    height: 100vh;
+  }
+}
 .refresh-div button {
   font-size: 1.2rem;
   margin-top: 1rem;
