@@ -1,5 +1,5 @@
-<!-- <template>
-  <section class="">
+<template>
+  <section class="container">
 
     <div class="score-div">
       <ScoreContainer :isRevision="isRevision" />
@@ -13,9 +13,9 @@
       <button class="text-white bg-sky-600 rounded" @click="refreshPage">Réinitialiser</button>
     </div>
 
-      <AdventiceCard v-if="isRevision" v-for="(adventice, index) in adventicesArray" :key="key" :adventice="adventice" />
+      <OrnamentalCard v-if="isRevision" v-for="(ornamental, index) in ornamentalsArray" :key="key" :ornamental="ornamental" />
 
-      <AdventiceQuizzCardContainer v-if="!isRevision" v-for="(adventice, index) in adventicesArray" :key="index" :index="index" :adventicesArray="adventicesArray" />
+      <OrnamentalQuizzCardContainer v-if="!isRevision" v-for="(ornamental, index) in ornamentalsArray" :key="index" :index="index" :ornamentalsArray="adventicesArray" />
     
     <div class="refresh-div flex justify-center items-center">
       <button 
@@ -31,20 +31,6 @@
 
   
 
-</template> -->
-
-<template>
-  <section class="container">
-    <h1>Ornamentals</h1>
-    <h1>Ornamentals</h1>
-    <h1>Ornamentals</h1>
-    <h1>Ornamentals</h1>
-    <h1>Ornamentals</h1>
-
-    <div class="contenu-test">
-      <h2>test</h2>
-    </div>
-  </section>
 </template>
 
 <script>
@@ -52,21 +38,21 @@ import smoothscroll from 'smoothscroll-polyfill';
 smoothscroll.polyfill();
 import ScoreContainer from './AdventicesComponents/ScoreContainer.vue';
 import ToggleSwitch from './AdventicesComponents/ToggleSwitch.vue';
-import AdventiceCard from './AdventicesComponents/AdventiceCard.vue';
-import AdventiceQuizzCardContainer from './AdventicesComponents/AdventiceQuizzCard/AdventiceQuizzCardContainer.vue';
-import adventices from '../assets/adventices.json';
+import OrnamentalCard from './OrnamentalsComponents/OrnamentalCard.vue';
+import OrnamentalQuizzCardContainer from './OrnamentalsComponents/OrnamentalQuizzCard/OrnamentalQuizzCardContainer.vue';
+import ornamentals from '../assets/ornamentals.json';
 
 export default {
   name: 'OrnamentalsLearningContainer',
   components: {
     ScoreContainer,
     ToggleSwitch,
-    AdventiceCard,
-    AdventiceQuizzCardContainer
+    OrnamentalCard,
+    OrnamentalQuizzCardContainer
   },
    data() {
     return {
-      adventicesArray: this.shuffle(Object.values(adventices)),
+      ornamentalsArray: this.shuffle(Object.values(ornamentals)),
       isRevision: true,
     };
   },
@@ -125,12 +111,8 @@ export default {
 <style scoped>
 .container {
   padding-top: 3rem;
-
-  .contenu-test {
-    background-color: red;
-    height: 100vh;
-  }
 }
+
 .refresh-div button {
   font-size: 1.2rem;
   margin-top: 1rem;

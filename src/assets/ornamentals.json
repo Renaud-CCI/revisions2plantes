@@ -1,0 +1,262 @@
+{
+  "01": {
+    "image": "plant01",
+    "name": "Primevère des Jardins",
+    "gender": "Primula",
+    "species": "acaulis",
+    "variety": null,
+    "family": "Primulacées",
+    "type": "Bisanuelle",
+    "comments": "nombreux coloris"
+  },
+  "02": {
+    "image": "plant02",
+    "name": "Primevère des Jardins",
+    "gender": "Primula",
+    "species": "eliator",
+    "variety": null,
+    "family": "Primulacées",
+    "type": "Bisanuelle",
+    "comments": null
+  },
+  "03": {
+    "image": "plant03",
+    "name": "Myosotis",
+    "gender": "Myosotis",
+    "species": "des alpes",
+    "variety": "alpina",
+    "family": "Boraginacées",
+    "type": "Bisanuelle",
+    "comments": "fleur bleue, blanche ou rose"
+  },
+  "04": {
+    "image": "plant04",
+    "name": "Viola des Jardins, Pensées à petites fleurs",
+    "gender": "Viola",
+    "species": "X Wittrokiana",
+    "variety": "sorbet",
+    "family": "Violacées",
+    "type": "Bisanuelle",
+    "comments": null
+  },
+  "05": {
+    "image": "plant05",
+    "name": "Pensée des Jardins",
+    "gender": "Viola",
+    "species": "X Wittrokiana",
+    "variety": "matrix",
+    "family": "Violacées",
+    "type": "Bisanuelle",
+    "comments": null
+  },
+  "06": {
+    "image": "plant06",
+    "name": "Pavot de Californie",
+    "gender": "Papaver",
+    "species": "californicus",
+    "variety": "Bulle de champagne",
+    "family": "Papaveracees",
+    "type": "Bisanuelle",
+    "comments": null
+  },
+  "07": {
+    "image": "plant07",
+    "name": "Giroflée de bouture",
+    "gender": "Erysinum",
+    "species": "matthiola",
+    "variety": null,
+    "family": "Brassicacées",
+    "type": "Bisanuelle",
+    "comments": null
+  },
+  "08": {
+    "image": "plant08",
+    "name": "Paquerette",
+    "gender": "Bellis",
+    "species": "perennis",
+    "variety": null,
+    "family": "Asteracées",
+    "type": "Bisanuelle",
+    "comments": null
+  },
+  "09": {
+    "image": "plant09",
+    "name": "Giroflée Ravanelle",
+    "gender": "Bellis",
+    "species": "cherii",
+    "variety": null,
+    "family": "Brassicacées",
+    "type": "Bisanuelle",
+    "comments": null
+  },
+  "10": {
+    "image": "plant10",
+    "name": "Monnaie du Pape",
+    "gender": "Lunaire",
+    "species": "bienis",
+    "variety": null,
+    "family": "Brassicacées",
+    "type": "Bisanuelle",
+    "comments": null
+  },
+  "11": {
+    "image": "jonc",
+    "name": "Jonc torsadé",
+    "gender": "Juncus",
+    "species": "twist",
+    "variety": "arowd",
+    "family": "Juncucacees",
+    "type": "Vivace Graminée",
+    "comments": "semi-aquatique"
+  },
+  "12": {
+    "image": "stipe",
+    "name": "Stipe cheveux dange",
+    "gender": "Stipa",
+    "species": "tenuifolia",
+    "variety": null,
+    "family": "Poacées",
+    "type": "Vivace Graminée",
+    "comments": null
+  },
+  "13": {
+    "image": "laiche",
+    "name": "Laïche de Buchanan",
+    "gender": "Carex",
+    "species": "buchanarii",
+    "variety": "red rooster",
+    "family": "Cyperacees",
+    "type": "Vivace Graminée",
+    "comments": null
+  },
+  "14": {
+    "image": "imperiata",
+    "name": "Imperata cylindrique",
+    "gender": "Imperata",
+    "species": "cylindrica",
+    "variety": "red baron",
+    "family": "Poacées",
+    "type": "Vivace Graminée",
+    "comments": null
+  },
+  "15": {
+    "image": "miscanthus",
+    "name": "Miscanthus, Herbe à éléphant",
+    "gender": "Miscanthus",
+    "species": "sinensis",
+    "variety": "zebrinus",
+    "family": "Poacées",
+    "type": "Vivace Graminée",
+    "comments": null
+  },
+  "16": {
+    "image": "carexPrairie",
+    "name": "Carex Prairie Fire",
+    "gender": "Carex",
+    "species": "testata",
+    "variety": "prairie fire",
+    "family": "Poacées",
+    "type": "Vivace Graminée",
+    "comments": null
+  },
+  "17": {
+    "image": "fetuque",
+    "name": "Fétuque bleue",
+    "gender": "Festuca",
+    "species": "glauca",
+    "variety": null,
+    "family": "Poacées",
+    "type": "Vivace Graminée",
+    "comments": null
+  },
+  "18": {
+    "image": "pampa",
+    "name": "Herbe de la Pampa",
+    "gender": "Cortadenia",
+    "species": "sellona",
+    "variety": null,
+    "family": "Poacées",
+    "type": "Vivace Graminée",
+    "comments": null
+  },
+  "19": {
+    "image": "plant19",
+    "name": "Carex Everest",
+    "gender": "Carex",
+    "species": "testata",
+    "variety": "everest",
+    "family": "Poacées",
+    "type": "Vivace Graminée",
+    "comments": null
+  },
+  "20": {
+    "image": "plant20",
+    "name": "Carex Everillo",
+    "gender": "Carex",
+    "species": "testata",
+    "variety": "everillo",
+    "family": "Poacées",
+    "type": "Vivace Graminée",
+    "comments": null
+  },
+  "21": {
+    "image": "plant21",
+    "name": "Prêle du Japon",
+    "gender": "Equisetum",
+    "species": "japonicum",
+    "variety": null,
+    "family": "Equicetacees",
+    "type": "Vivace Graminée",
+    "comments": "aquatique"
+  },
+  "22": {
+    "image": "plant22",
+    "name": "Millepertuis",
+    "gender": "Hypericum",
+    "species": "palatum",
+    "variety": null,
+    "family": "Hypericacees",
+    "type": "Vivace à feuillage persistant",
+    "comments": "fleur jaune"
+  },
+  "23": {
+    "image": "vergerette",
+    "name": "Vergerette de karvinski",
+    "gender": "Erigeron",
+    "species": "karvinskianus",
+    "variety": null,
+    "family": "Asteracees",
+    "type": "Vivace à feuillage persistant",
+    "comments": null
+  },
+  "24": {
+    "image": "lierre",
+    "name": "Lierre terrestre",
+    "gender": "Glechoma",
+    "species": "hederacea",
+    "variety": "variegata",
+    "family": "Hederacees",
+    "type": "Vivace à feuillage persistant",
+    "comments": "Fleur bleu clair"
+  },
+  "25": {
+    "image": "doronique",
+    "name": "Doronique du Caucase",
+    "gender": "Doronicum",
+    "species": "orientalis",
+    "variety": null,
+    "family": "Asteracees",
+    "type": "Vivace à feuillage persistant",
+    "comments": "Fleur jaune"
+  },
+  "26": {
+    "image": "heuchère",
+    "name": "Heuchère",
+    "gender": "Heuchera",
+    "species": "sanguinea",
+    "variety": null,
+    "family": "Saxifragacees",
+    "type": "Vivace à feuillage persistant",
+    "comments": "Multitude couleurs feuille"
+  }
+}
