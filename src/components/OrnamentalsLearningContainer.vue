@@ -9,7 +9,7 @@
       <OrnamentalToggleSwitch @ornamental-toggle-mode="handleToggleMode" />
     </div>
 
-    <div class="refresh-div flex justify-center items-center">
+    <div class="ornamental-refresh-div flex justify-center items-center">
       <button class="text-white bg-sky-600 rounded" @click="refreshPage">Réinitialiser</button>
     </div>
 
@@ -17,7 +17,7 @@
 
       <OrnamentalQuizzCardContainer v-if="!OrnamentalIsRevision" v-for="(ornamental, index) in ornamentalsArray" :key="index" :index="index" :ornamentalsArray="ornamentalsArray" />
     
-    <div class="refresh-div flex justify-center items-center">
+    <div class="ornamental-refresh-div flex justify-center items-center">
       <button 
         class="text-white px-4 py-1 rounded" 
         :class="OrnamentalIsRevision ? 'bg-sky-600' : 'bg-amber-500'" 
@@ -89,7 +89,7 @@ export default {
     },
     handleToggleMode() {
       this.OrnamentalIsRevision = !this.OrnamentalIsRevision;
-      const button = document.querySelector('.refresh-div button');
+      const button = document.querySelector('.ornamental-refresh-div button');
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
       if (this.OrnamentalIsRevision) {
         button.style.opacity = "1";
@@ -113,7 +113,7 @@ export default {
   padding-top: 3rem;
 }
 
-.refresh-div button {
+.ornamental-refresh-div button {
   font-size: 1.2rem;
   margin-top: 1rem;
   height: 3rem;
@@ -122,7 +122,7 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-  .refresh-div button {
+  .ornamental-refresh-div button {
     font-size: 0.8rem;
     height: 2rem;
     padding: 0.2rem 1rem;
