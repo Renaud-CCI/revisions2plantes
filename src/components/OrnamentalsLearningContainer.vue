@@ -102,6 +102,7 @@ export default {
         button.style.height = "0";
         button.style.pointerEvents = "none";
       }
+      this.$emit('ornamentalIsRevisionEvent', this.OrnamentalIsRevision);
     }
   }
 }

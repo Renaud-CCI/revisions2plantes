@@ -8,8 +8,15 @@
 
     <div id="slide-container">
     <div class="flex justify-center">
-          <AdventicesLearningContainer :class="{ 'adventices-in': adventicesPage, 'adventices-out': !adventicesPage }" />
-          <OrnamentalsLearningContainer :class="{ 'ornamentals-in': !adventicesPage, 'ornamentals-out': adventicesPage }" />
+          <AdventicesLearningContainer
+            :class="{ 'adventices-in': adventicesPage, 'adventices-out': !adventicesPage }"
+            @adventiceIsRevisionEvent="handleAdventiceIsRevisionEvent"
+          />
+
+          <OrnamentalsLearningContainer
+            :class="{ 'ornamentals-in': !adventicesPage, 'ornamentals-out': adventicesPage }"
+            @ornamentalIsRevisionEvent="handleOrnamentalIsRevisionEvent"
+          />
           </div>
     </div>
 
@@ -41,7 +48,9 @@ export default {
     return {
       adventicesPage: true,
       adventicesFormMarginTop: 0,
-      ornamentalsFormMarginTop: 0
+      ornamentalsFormMarginTop: 0,
+      ornamentalIsRevision: true,
+      adventiceIsRevision: true,
     };
   },
   mounted() {
@@ -59,12 +68,22 @@ export default {
     setFormMargitTop() {
       const adventicesKeysCount = Object.keys(adventices).length;
       const ornamentalsKeysCount = Object.keys(ornamentals).length;
-      const multiplier = window.matchMedia('(max-width: 768px)').matches ? -77 : -82;
+      const multiplier = window.matchMedia('(max-width: 768px)').matches ? -79 : -84;
       if (adventicesKeysCount < ornamentalsKeysCount) {
         this.adventicesFormMarginTop = multiplier * (ornamentalsKeysCount - adventicesKeysCount);
+        this.adventicesFormMarginTop += this.adventiceIsRevision ? 0 : 50;
       } else if (ornamentalsKeysCount < adventicesKeysCount) {
         this.ornamentalsFormMarginTop = multiplier * (adventicesKeysCount - ornamentalsKeysCount);
+        this.ornamentalsFormMarginTop += this.ornamentalIsRevision ? 0 : 50;
       }
+    },
+    handleOrnamentalIsRevisionEvent(value) {
+      this.ornamentalIsRevision = value;
+      this.setFormMargitTop();
+    },
+    handleAdventiceIsRevisionEvent(value) {
+      this.adventiceIsRevision = value;
+      this.setFormMargitTop();
     }
   },
   watch: {
