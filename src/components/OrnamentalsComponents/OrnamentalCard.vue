@@ -1,5 +1,5 @@
 <template>
-  <div class="adventice-card flex flex-col justify-center items-center py-6">
+  <div class="adventice-card flex flex-col justify-center items-center">
 
     <div class="card bg-sky-100 rounded-xl flex flex-col justify-center items-center" @click="flipCard">
 
@@ -86,6 +86,8 @@ export default {
 
 <style scoped lang="scss">
 .adventice-card {
+  padding: 2vh 0;
+
   .card {
     width: 25vw;
     height: 80vh;

@@ -13,7 +13,11 @@
           </div>
     </div>
 
-    <div class="flex justify-center items-center">
+    <div
+      ref="contact-div"
+      class="flex justify-center items-center"
+      :style="{ 'margin-top': formMarginTop + 'vh' }"
+    >
       <ContactForm />
     </div>
   </section>
@@ -23,6 +27,8 @@
 import AdventicesLearningContainer from './components/AdventicesLearningContainer.vue';
 import OrnamentalsLearningContainer from './components/OrnamentalsLearningContainer.vue';
 import ContactForm from './components/ContactForm.vue';
+import adventices from './assets/adventices.json';
+import ornamentals from './assets/ornamentals.json';
 
 export default {
   name: 'App',
@@ -34,11 +40,31 @@ export default {
   data() {
     return {
       adventicesPage: true,
+      adventicesFormMarginTop: 0,
+      ornamentalsFormMarginTop: 0
     };
+  },
+  mounted() {
+    this.setFormMargitTop();
+  },
+  computed: {
+    formMarginTop (){
+      return this.adventicesPage ? this.adventicesFormMarginTop : this.ornamentalsFormMarginTop;
+    }
   },
   methods: {
     togglePage() {
       this.adventicesPage = !this.adventicesPage;
+    },
+    setFormMargitTop() {
+      const adventicesKeysCount = Object.keys(adventices).length;
+      const ornamentalsKeysCount = Object.keys(ornamentals).length;
+      const multiplier = window.matchMedia('(max-width: 768px)').matches ? -77 : -82;
+      if (adventicesKeysCount < ornamentalsKeysCount) {
+        this.adventicesFormMarginTop = multiplier * (ornamentalsKeysCount - adventicesKeysCount);
+      } else if (ornamentalsKeysCount < adventicesKeysCount) {
+        this.ornamentalsFormMarginTop = multiplier * (adventicesKeysCount - ornamentalsKeysCount);
+      }
     }
   },
   watch: {
@@ -111,6 +137,8 @@ nav {
     left: 100vw;
     transition: left 0.6s ease-in-out, width 0.3s ease-in-out;
   }
+
+  
 }
 
 @media screen and (max-width: 768px) {
