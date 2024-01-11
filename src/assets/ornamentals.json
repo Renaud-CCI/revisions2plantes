@@ -1,6 +1,6 @@
 {
   "01": {
-    "image": "plant01",
+    "image": "primevereA",
     "name": "Primevère des Jardins",
     "gender": "Primula",
     "species": "acaulis",
@@ -10,7 +10,7 @@
     "comments": "nombreux coloris"
   },
   "02": {
-    "image": "plant02",
+    "image": "primevereE",
     "name": "Primevère des Jardins",
     "gender": "Primula",
     "species": "eliator",
@@ -20,7 +20,7 @@
     "comments": null
   },
   "03": {
-    "image": "plant03",
+    "image": "myosotis",
     "name": "Myosotis",
     "gender": "Myosotis",
     "species": "des alpes",
@@ -30,7 +30,7 @@
     "comments": "fleur bleue, blanche ou rose"
   },
   "04": {
-    "image": "plant04",
+    "image": "violaSorbet",
     "name": "Viola des Jardins, Pensées à petites fleurs",
     "gender": "Viola",
     "species": "X Wittrokiana",
@@ -40,7 +40,7 @@
     "comments": null
   },
   "05": {
-    "image": "plant05",
+    "image": "violaMatrix",
     "name": "Pensée des Jardins",
     "gender": "Viola",
     "species": "X Wittrokiana",
@@ -50,7 +50,7 @@
     "comments": null
   },
   "06": {
-    "image": "plant06",
+    "image": "pavot",
     "name": "Pavot de Californie",
     "gender": "Papaver",
     "species": "californicus",
@@ -60,9 +60,9 @@
     "comments": null
   },
   "07": {
-    "image": "plant07",
+    "image": "giroflee",
     "name": "Giroflée de bouture",
-    "gender": "Erysinum",
+    "gender": "Erysimum",
     "species": "matthiola",
     "variety": null,
     "family": "Brassicacées",
@@ -70,7 +70,7 @@
     "comments": null
   },
   "08": {
-    "image": "plant08",
+    "image": "paquerette",
     "name": "Paquerette",
     "gender": "Bellis",
     "species": "perennis",
@@ -80,7 +80,7 @@
     "comments": null
   },
   "09": {
-    "image": "plant09",
+    "image": "girofleeR",
     "name": "Giroflée Ravanelle",
     "gender": "Bellis",
     "species": "cherii",
@@ -90,7 +90,7 @@
     "comments": null
   },
   "10": {
-    "image": "plant10",
+    "image": "pape",
     "name": "Monnaie du Pape",
     "gender": "Lunaire",
     "species": "bienis",
@@ -180,7 +180,7 @@
     "comments": null
   },
   "19": {
-    "image": "plant19",
+    "image": "carexEverest",
     "name": "Carex Everest",
     "gender": "Carex",
     "species": "testata",
@@ -190,7 +190,7 @@
     "comments": null
   },
   "20": {
-    "image": "plant20",
+    "image": "carexEverillo",
     "name": "Carex Everillo",
     "gender": "Carex",
     "species": "testata",
@@ -200,7 +200,7 @@
     "comments": null
   },
   "21": {
-    "image": "plant21",
+    "image": "prele",
     "name": "Prêle du Japon",
     "gender": "Equisetum",
     "species": "japonicum",
@@ -210,7 +210,7 @@
     "comments": "aquatique"
   },
   "22": {
-    "image": "plant22",
+    "image": "millepertuis",
     "name": "Millepertuis",
     "gender": "Hypericum",
     "species": "palatum",
