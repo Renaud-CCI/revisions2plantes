@@ -21,6 +21,7 @@
 
           <PhytosanitariesLearningContainer
           :class="{ 'page-in': phytosanitariesPage, 'page-out': !phytosanitariesPage }"
+          @phytosanitaryIsRevisionEvent="handlePhytosanitaryIsRevisionEvent"
           />
 
           </div>
@@ -59,6 +60,7 @@ export default {
       phytosanitariesPage: false,
       ornamentalIsRevision: true,
       adventiceIsRevision: true,
+      phytosanitaryIsRevision: true,
     };
   },
   mounted() {
@@ -74,12 +76,13 @@ export default {
     },
     handleOrnamentalIsRevisionEvent(value) {
       this.ornamentalIsRevision = value;
-      this.setFormMargitTop();
     },
     handleAdventiceIsRevisionEvent(value) {
       this.adventiceIsRevision = value;
-      this.setFormMargitTop();
-    }
+    },
+    handlePhytosanitaryIsRevisionEvent(value) {
+      this.phytosanitaryIsRevision = value;
+    },
   },
   watch: {
   }

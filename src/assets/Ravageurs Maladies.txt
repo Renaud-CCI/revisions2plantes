@@ -1,0 +1,12 @@
+{
+  "01": {
+    "image": "primevereA",
+    "name": "Primevère des Jardins",
+    "gender": "Primula",
+    "species": "acaulis",
+    "variety": null,
+    "family": "Primulacées",
+    "type": "Bisanuelle",
+    "comments": "nombreux coloris"
+  },
+  
