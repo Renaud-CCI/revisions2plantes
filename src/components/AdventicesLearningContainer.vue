@@ -5,7 +5,14 @@
       <ScoreContainer :isRevision="isRevision" />
     </div>
 
-    <div class="pt-6">
+    <h1 
+      class="text-center"
+      :class="isRevision ? 'text-sky-600' : 'text-amber-500'" 
+    >
+      {{ 'Adventices'.toUpperCase() }}
+    </h1>
+
+    <div class="">
       <ToggleSwitch @toggle-mode="handleToggleMode" />
     </div>
 
@@ -110,8 +117,20 @@ export default {
 </script>
 
 <style scoped>
+
+@font-face {
+  font-family: 'Herb';
+  src: url('@/assets/polices/Herb.ttf') format('truetype');
+}
+
 .container {
   padding-top: 3rem;
+
+  h1 {
+    font-size: 3rem;
+    padding-top: 1rem;
+    font-family: 'Herb', sans-serif;
+  }
 }
 
 .refresh-div button {
@@ -128,5 +147,6 @@ export default {
     height: 2rem;
     padding: 0.2rem 1rem;
   }
-} 
+}
 </style>
+

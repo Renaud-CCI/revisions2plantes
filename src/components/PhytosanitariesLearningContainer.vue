@@ -5,7 +5,14 @@
       <PhytosanitaryScoreContainer :PhytosanitaryIsRevision="PhytosanitaryIsRevision" />
     </div>
 
-    <div class="pt-6">
+    <h1 
+      class="text-center"
+      :class="PhytosanitaryIsRevision ? 'text-sky-600' : 'text-amber-500'" 
+    >
+      {{ 'Indesirables'.toUpperCase() }}
+    </h1>
+
+    <div class="">
       <PhytosanitaryToggleSwitch @phytosanitary-toggle-mode="handleToggleMode" />
     </div>
 
@@ -110,8 +117,19 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: 'Science';
+  src: url('@/assets/polices/Science.ttf') format('truetype');
+}
+
 .container {
   padding-top: 3rem;
+
+  h1 {
+    font-size: 2.8rem;
+    padding-top: 1rem;
+    font-family: 'Science', sans-serif;
+  }
 }
 
 .phytosanitary-refresh-div button {

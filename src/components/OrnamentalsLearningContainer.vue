@@ -5,7 +5,14 @@
       <OrnamentalScoreContainer :OrnamentalIsRevision="OrnamentalIsRevision" />
     </div>
 
-    <div class="pt-6">
+    <h1 
+      class="text-center"
+      :class="OrnamentalIsRevision ? 'text-sky-600' : 'text-amber-500'" 
+    >
+      {{ 'Ornementales'.toUpperCase() }}
+    </h1>
+
+    <div class="">
       <OrnamentalToggleSwitch @ornamental-toggle-mode="handleToggleMode" />
     </div>
 
@@ -110,8 +117,19 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: 'Flower';
+  src: url('@/assets/polices/Flower.ttf') format('truetype');
+}
+
 .container {
   padding-top: 3rem;
+
+  h1 {
+    font-size: 3.2rem;
+    padding-top: 1rem;
+    font-family: 'Flower', sans-serif;
+  }
 }
 
 .ornamental-refresh-div button {
