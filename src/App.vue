@@ -93,7 +93,7 @@ export default {
 
 nav {
   height: 3rem;
-  padding: 0 30%;
+  padding: 0.2rem 30% 0 30%;
 
   button {
     width: 33%;
@@ -128,7 +128,7 @@ nav {
 @media screen and (max-width: 768px) {
   nav {
     height: 3rem; 
-    padding: 0;
+    padding: 0.2rem 0;
 
     button {
       height: 3rem;
