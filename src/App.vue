@@ -2,21 +2,28 @@
   <section class="test">
 
     <nav class="fixed top-0 left-0 w-full bg-zinc-100 z-50">
-      <button id="adventices-button" @click="togglePage" :class="{ 'selected-button': adventicesPage }">Adventices</button>
-      <button id="ornementals-button" @click="togglePage" :class="{ 'selected-button': !adventicesPage }">Ornementales</button>
+      <button id="adventices-button" @click="togglePage('adventicesPage')" :class="{ 'selected-button': adventicesPage }"><i class="lni lni-sprout"></i></button>
+      <button id="ornementals-button" @click="togglePage('ornamentalsPage')" :class="{ 'selected-button': ornamentalsPage }"> <i class="lni lni-flower"></i> </button>
+      <button id="phytosanitaries-button" @click="togglePage('phytosanitariesPage')" :class="{ 'selected-button': phytosanitariesPage }"> <i class="lni lni-first-aid"></i> </button>
     </nav>
 
     <div id="slide-container">
     <div class="flex justify-center">
           <AdventicesLearningContainer
-            :class="{ 'adventices-in': adventicesPage, 'adventices-out': !adventicesPage }"
+            :class="{ 'page-in': adventicesPage, 'page-out': !adventicesPage }"
             @adventiceIsRevisionEvent="handleAdventiceIsRevisionEvent"
           />
 
           <OrnamentalsLearningContainer
-            :class="{ 'ornamentals-in': !adventicesPage, 'ornamentals-out': adventicesPage }"
+            :class="{ 'page-in': ornamentalsPage, 'page-out': !ornamentalsPage }"
             @ornamentalIsRevisionEvent="handleOrnamentalIsRevisionEvent"
           />
+
+          <PhytosanitariesLearningContainer
+          :class="{ 'page-in': phytosanitariesPage, 'page-out': !phytosanitariesPage }"
+          @phytosanitaryIsRevisionEvent="handlePhytosanitaryIsRevisionEvent"
+          />
+
           </div>
     </div>
 
@@ -33,6 +40,7 @@
 <script>
 import AdventicesLearningContainer from './components/AdventicesLearningContainer.vue';
 import OrnamentalsLearningContainer from './components/OrnamentalsLearningContainer.vue';
+import PhytosanitariesLearningContainer from './components/PhytosanitariesLearningContainer.vue';
 import ContactForm from './components/ContactForm.vue';
 import adventices from './assets/adventices.json';
 import ornamentals from './assets/ornamentals.json';
@@ -42,49 +50,39 @@ export default {
   components: {
     AdventicesLearningContainer,
     OrnamentalsLearningContainer,
+    PhytosanitariesLearningContainer,
     ContactForm
   },
   data() {
     return {
       adventicesPage: true,
-      adventicesFormMarginTop: 0,
-      ornamentalsFormMarginTop: 0,
+      ornamentalsPage: false,
+      phytosanitariesPage: false,
       ornamentalIsRevision: true,
       adventiceIsRevision: true,
+      phytosanitaryIsRevision: true,
     };
   },
   mounted() {
-    this.setFormMargitTop();
   },
   computed: {
-    formMarginTop (){
-      return this.adventicesPage ? this.adventicesFormMarginTop : this.ornamentalsFormMarginTop;
-    }
   },
   methods: {
-    togglePage() {
-      this.adventicesPage = !this.adventicesPage;
-    },
-    setFormMargitTop() {
-      const adventicesKeysCount = Object.keys(adventices).length;
-      const ornamentalsKeysCount = Object.keys(ornamentals).length;
-      const multiplier = window.matchMedia('(max-width: 768px)').matches ? -79 : -84;
-      if (adventicesKeysCount < ornamentalsKeysCount) {
-        this.adventicesFormMarginTop = multiplier * (ornamentalsKeysCount - adventicesKeysCount);
-        this.adventicesFormMarginTop += this.adventiceIsRevision ? 0 : 50;
-      } else if (ornamentalsKeysCount < adventicesKeysCount) {
-        this.ornamentalsFormMarginTop = multiplier * (adventicesKeysCount - ornamentalsKeysCount);
-        this.ornamentalsFormMarginTop += this.ornamentalIsRevision ? 0 : 50;
-      }
+    togglePage(selectedPage) {
+      this.adventicesPage = false;
+      this.ornamentalsPage = false;
+      this.phytosanitariesPage = false;
+      this[selectedPage] = true;
     },
     handleOrnamentalIsRevisionEvent(value) {
       this.ornamentalIsRevision = value;
-      this.setFormMargitTop();
     },
     handleAdventiceIsRevisionEvent(value) {
       this.adventiceIsRevision = value;
-      this.setFormMargitTop();
-    }
+    },
+    handlePhytosanitaryIsRevisionEvent(value) {
+      this.phytosanitaryIsRevision = value;
+    },
   },
   watch: {
   }
@@ -93,35 +91,16 @@ export default {
 
 <style scoped>
 
-@font-face {
-  font-family: 'Herb';
-  src: url('./assets/polices/Herb.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Flower';
-  src: url('./assets/polices/Flower.ttf') format('truetype');
-}
-
 nav {
   height: 3rem;
   padding: 0 30%;
 
   button {
-    width: 50%;
+    width: 33%;
     height: 3rem;
     color: #e4e4e7; /* tailwind zinc-200 */
     transition: color 0.4s ease-in-out;
-  }
-
-  #adventices-button {
-    font-size: 1.8rem;
-    font-family: 'Herb';
-  }
-
-  #ornementals-button {
     font-size: 2rem;
-    font-family: 'Flower';
   }
 
   .selected-button {
@@ -131,33 +110,19 @@ nav {
 
   
 #slide-container {
-  overflow-x: hidden;
-  height: auto;
+  .page-in {
+    display: block;
+    animation: fadeIn 0.6s;
+  }
 
-
-  .adventices-in, .ornamentals-in {
-  width: 100vw;
-  height: auto;
-  position: relative;
-  left: 0;
-  transition: left 0.6s ease-in-out, width 0.3s ease-in-out;
+  .page-out {
+    display: none;
+  }
 }
 
-  .adventices-out {
-    width: 0;
-    position: relative;
-    left: -100vw;
-    transition: left 0.6s ease-in-out, width 0.3s ease-in-out;
-  }
-
-  .ornamentals-out {
-    width: 0;
-    position: relative;
-    left: 100vw;
-    transition: left 0.6s ease-in-out, width 0.3s ease-in-out;
-  }
-
-  
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @media screen and (max-width: 768px) {
@@ -166,16 +131,7 @@ nav {
     padding: 0;
 
     button {
-      width: 50%;
       height: 3rem;
-    }
-
-    #adventices-button {
-      font-size: 1.8rem;
-    }
-
-    #ornementals-button {
-      font-size: 2rem;
     }
   }
 } 
