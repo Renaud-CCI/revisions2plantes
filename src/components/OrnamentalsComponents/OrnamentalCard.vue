@@ -7,7 +7,7 @@
         <img v-if="imgLoad" :src="imgSrc" :alt="ornamentals.name + '_Img'" class="adventice-image rounded-xl">
       </div>
 
-      <div v-if="!recto" class="verso flex flex-col items-center justify-center">
+      <div v-if="!recto" class="verso flex flex-col items-center justify-center text-neutral-700">
         <h1 class="text-3xl mb-4 text-center" v-if="ornamentals.name">{{ ornamentals.name }}</h1>
         <p class="text-base mt-4 text-neutral-500 text-center" v-if="ornamentals.gender">genre :</p>
         <p class="text-lg text-center" v-if="ornamentals.gender">{{ ornamentals.gender }}</p>

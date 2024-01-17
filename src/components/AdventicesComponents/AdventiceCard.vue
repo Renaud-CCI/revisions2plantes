@@ -7,7 +7,7 @@
         <img v-if="imgLoad" :src="imgSrc" :alt="adventices.name + '_Img'" class="adventice-image rounded-xl">
       </div>
 
-      <div v-if="!recto" class="verso flex flex-col items-center justify-center">
+      <div v-if="!recto" class="verso flex flex-col items-center justify-center text-neutral-700">
         <h1 class="text-4xl mb-8 text-center">{{ adventices.name }}</h1>
         <h2 class="text-2xl italic text-center">{{ adventices.latin }}</h2>
         <p class="text-lg mt-16 text-neutral-500 text-center">famille :</p>

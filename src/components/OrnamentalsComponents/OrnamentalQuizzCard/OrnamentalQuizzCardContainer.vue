@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <div v-if="!recto" class="verso flex flex-col items-center justify-center">
+      <div v-if="!recto" class="verso flex flex-col items-center justify-center text-neutral-700">
         <p class="response-logo mb-4">{{ responseLogo }}</p>
          <h1 class="text-3xl mb-4 text-center" v-if="adventices.name">{{ adventices.name }}</h1>
         <p class="text-base mt-4 text-neutral-500 text-center" v-if="adventices.gender">genre :</p>

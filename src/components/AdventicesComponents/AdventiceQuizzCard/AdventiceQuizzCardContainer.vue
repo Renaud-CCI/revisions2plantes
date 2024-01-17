@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <div v-if="!recto" class="verso flex flex-col items-center justify-center">
+      <div v-if="!recto" class="verso flex flex-col items-center justify-center text-neutral-700">
         <p class="response-logo mb-8">{{ responseLogo }}</p>
         <h1 class="text-4xl mb-8 text-center">{{ adventices.name }}</h1>
         <h2 class="text-2xl italic text-center">{{ adventices.latin }}</h2>
