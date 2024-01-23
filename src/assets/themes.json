@@ -1,0 +1,22 @@
+{
+  "adventices": {
+    "name": "adventices",
+    "title": "adventices",
+    "title_fontsize": 3,
+    "json": "adventices.json"
+  },
+  "ornamentals": {
+    "name": "ornamentals",
+    "title": "ornementales",
+    "title_fontsize": 3.2,
+    "json": "ornamentals.json"
+  },
+  "phytosanitaries": {
+    "name": "phytosanitaries",
+    "title": "indesirables",
+    "title_fontsize": 2.8,
+    "json": "phytosanitaries.json"
+  }
+
+}
+

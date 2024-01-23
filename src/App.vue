@@ -12,16 +12,21 @@
           <AdventicesLearningContainer
             :class="{ 'page-in': adventicesPage, 'page-out': !adventicesPage }"
             @adventiceIsRevisionEvent="handleAdventiceIsRevisionEvent"
+            :theme="theme"
           />
 
           <OrnamentalsLearningContainer
             :class="{ 'page-in': ornamentalsPage, 'page-out': !ornamentalsPage }"
             @ornamentalIsRevisionEvent="handleOrnamentalIsRevisionEvent"
+            :theme="theme"
           />
 
-          <PhytosanitariesLearningContainer
+          <LearningContainer
           :class="{ 'page-in': phytosanitariesPage, 'page-out': !phytosanitariesPage }"
           @phytosanitaryIsRevisionEvent="handlePhytosanitaryIsRevisionEvent"
+          :theme="theme"
+          />
+          
           />
 
           </div>
@@ -41,9 +46,11 @@
 import AdventicesLearningContainer from './components/AdventicesLearningContainer.vue';
 import OrnamentalsLearningContainer from './components/OrnamentalsLearningContainer.vue';
 import PhytosanitariesLearningContainer from './components/PhytosanitariesLearningContainer.vue';
+import LearningContainer from './components/LearningContainer.vue';
 import ContactForm from './components/ContactForm.vue';
 import adventices from './assets/adventices.json';
 import ornamentals from './assets/ornamentals.json';
+import themes from './assets/themes.json';
 
 export default {
   name: 'App',
@@ -51,6 +58,7 @@ export default {
     AdventicesLearningContainer,
     OrnamentalsLearningContainer,
     PhytosanitariesLearningContainer,
+    LearningContainer,
     ContactForm
   },
   data() {
@@ -61,11 +69,15 @@ export default {
       ornamentalIsRevision: true,
       adventiceIsRevision: true,
       phytosanitaryIsRevision: true,
+      choosenTheme: 'phytosanitaries'
     };
   },
   mounted() {
   },
   computed: {
+    theme() {
+      return themes[this.choosenTheme];
+    },
   },
   methods: {
     togglePage(selectedPage) {
