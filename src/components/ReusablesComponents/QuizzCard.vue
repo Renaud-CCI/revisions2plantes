@@ -10,7 +10,8 @@
         </div>
 
         <div class="answers-div col-span-1 flex flex-col justify-start items-center">
-          <p class="text-center"> Nom :</p>
+          <p v-if="componentName === 'phytosanitaries'" class="text-center"> Nom :</p>
+          <p v-if="componentName === 'ornamentals'" class="text-center">{{ displayableQuestionTitle }}</p>
           <button v-for="(answer, index) in shuffledAnswers" :key="index" @click="answer === goodAnswer ? goodTraitment() : badTraitment()">
             {{ answer }}
           </button>
@@ -36,6 +37,23 @@
           <p class="text-lg text-center" v-if="itemInfos.observation">{{ itemInfos.observation }}</p>
           <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.prevention">prévention :</p>
           <p class="text-lg text-center" v-if="itemInfos.prevention">{{ itemInfos.prevention }}</p>
+        </div>
+
+        <div v-if="componentName === 'ornamentals'">
+          <p class="response-logo mb-4 text-center">{{ responseLogo }}</p>
+          <h1 class="text-3xl mb-4 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h1>
+          <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.gender">genre :</p>
+          <p class="text-lg text-center" v-if="itemInfos.gender">{{ itemInfos.gender }}</p>
+          <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.species">espèce :</p>
+          <p class="text-lg text-center" v-if="itemInfos.species">{{ itemInfos.species }}</p>
+          <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.variety">variété :</p>
+          <p class="text-lg text-center" v-if="itemInfos.variety">{{ itemInfos.variety }}</p>
+          <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.family">famille :</p>
+          <p class="text-lg text-center" v-if="itemInfos.family">{{ itemInfos.family }}</p>
+          <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.type">type :</p>
+          <p class="text-lg text-center" v-if="itemInfos.type">{{ itemInfos.type }}</p>
+          <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.comments">caractéristiques :</p>
+          <p class="text-lg text-center" v-if="itemInfos.comments">{{ itemInfos.comments }}</p>
         </div>
       </div>
 
@@ -87,6 +105,27 @@ export default {
     },
     imagePath() {
       return `/src/assets/images/${this.componentName}/${this.componentArray[this.index]['image']}.jpg`;
+    },
+    displayableQuestionTitle() {
+      switch (this.questionTitle) {
+        case 'name':
+          return 'Nom commun :';
+          break;
+        case 'gender':
+          return 'Genre :';
+          break;
+        case 'species':
+          return 'Espèce :';
+          break;
+        case 'family':
+          return 'Famille :';
+          break;
+        case 'type':
+          return 'Type :';
+          break;      
+        default:
+          break;
+      }
     }
   },
   methods: {

@@ -26,6 +26,24 @@
           <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.prevention">prévention :</p>
           <p class="text-lg text-center" v-if="itemInfos.prevention">{{ itemInfos.prevention }}</p>
         </div>
+
+        <div v-if="componentName === 'ornamentals'">
+          <h1 class="text-3xl mb-4 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h1>
+          <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.gender">genre :</p>
+          <p class="text-lg text-center" v-if="itemInfos.gender">{{ itemInfos.gender }}</p>
+          <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.species">espèce :</p>
+          <p class="text-lg text-center" v-if="itemInfos.species">{{ itemInfos.species }}</p>
+          <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.variety">variété :</p>
+          <p class="text-lg text-center" v-if="itemInfos.variety">{{ itemInfos.variety }}</p>
+          <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.family">famille :</p>
+          <p class="text-lg text-center" v-if="itemInfos.family">{{ itemInfos.family }}</p>
+          <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.type">type :</p>
+          <p class="text-lg text-center" v-if="itemInfos.type">{{ itemInfos.type }}</p>
+          <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.comments">caractéristiques :</p>
+          <p class="text-lg text-center" v-if="itemInfos.comments">{{ itemInfos.comments }}</p>
+        </div>
+
+
       </div>
 
     </div>
