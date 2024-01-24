@@ -11,7 +11,7 @@
 
         <div class="answers-div col-span-1 flex flex-col justify-start items-center">
           <p v-if="componentName === 'phytosanitaries'" class="text-center"> Nom :</p>
-          <p v-if="componentName === 'ornamentals'" class="text-center">{{ displayableQuestionTitle }}</p>
+          <p v-if="componentName === 'ornamentals' || componentName === 'adventices'" class="text-center">{{ displayableQuestionTitle }}</p>
           <button v-for="(answer, index) in shuffledAnswers" :key="index" @click="answer === goodAnswer ? goodTraitment() : badTraitment()">
             {{ answer }}
           </button>
@@ -54,6 +54,16 @@
           <p class="text-lg text-center" v-if="itemInfos.type">{{ itemInfos.type }}</p>
           <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.comments">caractéristiques :</p>
           <p class="text-lg text-center" v-if="itemInfos.comments">{{ itemInfos.comments }}</p>
+        </div>
+
+        <div v-if="componentName === 'adventices'">
+          <p class="response-logo mb-8 text-center">{{ responseLogo }}</p>
+          <h1 class="text-4xl mb-8 text-center">{{itemInfos.name }}</h1>
+          <h2 class="text-2xl italic text-center">{{itemInfos.latin }}</h2>
+          <p class="text-lg mt-16 text-neutral-500 text-center">famille :</p>
+          <p class="text-xl text-center">{{itemInfos.family }}</p>
+          <p class="text-lg mt-4 text-neutral-500 text-center">type :</p>
+          <p class="text-xl text-center">{{itemInfos.type }}</p>
         </div>
       </div>
 
@@ -104,7 +114,13 @@ export default {
       return this.componentArray[this.index];
     },
     imagePath() {
-      return `/src/assets/images/${this.componentName}/${this.componentArray[this.index]['image']}.jpg`;
+      if (this.componentName === 'adventices') {
+        const randomAdventiceImages = [`${this.componentArray[this.index]['image']}1`, `${this.componentArray[this.index]['image']}2`, `${this.componentArray[this.index]['image']}3`];
+        const randomAdventiceImage = randomAdventiceImages[Math.floor(Math.random() * randomAdventiceImages.length)];
+        return `/src/assets/images/adventices/${randomAdventiceImage}.jpg`;
+      } else {
+        return `/src/assets/images/${this.componentName}/${this.componentArray[this.index]['image']}.jpg`;
+      }
     },
     displayableQuestionTitle() {
       switch (this.questionTitle) {
@@ -119,6 +135,12 @@ export default {
           break;
         case 'family':
           return 'Famille :';
+          break;
+        case 'type':
+          return 'Type :';
+          break;      
+        case 'latin':
+          return 'Nom latin :';
           break;
         case 'type':
           return 'Type :';
@@ -154,7 +176,7 @@ export default {
           break;
         case 'ornamentals':
           const currentOrnamental = this.componentArray[this.index];
-          const entries = Object.entries(currentOrnamental);
+          let entries = Object.entries(currentOrnamental);
           let randomIndex;
           let randomEntry;
           do {
@@ -165,10 +187,23 @@ export default {
           this.questionTitle = randomEntry[0];
           this.goodAnswer = randomEntry[1];
 
-          this.badAnswers = randomIndex === 6 ? this.getFixedOrnamentalsBadAnswers(randomEntry[1]) : this.getRandomOrnamentalsBadAnswers(randomEntry[0]);
+          this.badAnswers = randomIndex === 6 ? this.getFixedBadAnswers(randomEntry[1]) : this.getRandomOrnamentalsBadAnswers(randomEntry[0]);
 
           this.shuffledAnswers = this.shuffleArray([this.goodAnswer, ...this.badAnswers]);
-          break;      }
+          break;      
+        case 'adventices':
+          const currentAdventice = this.componentArray[this.index];
+          const adventiceEntries = Object.entries(currentAdventice);
+          const adventiceRandomIndex = this.getRandomIndex(adventiceEntries.length); // ne doit pas être égal à 0 (il s'agit de l'image)
+          const adventiceRandomEntry = adventiceEntries[adventiceRandomIndex];
+
+          this.questionTitle = adventiceRandomEntry[0];
+          this.goodAnswer = adventiceRandomEntry[1];
+
+          this.badAnswers = adventiceRandomIndex === 4 ? this.getFixedBadAnswers(adventiceRandomEntry[1]) : this.getRandomOrnamentalsBadAnswers(adventiceRandomEntry[0]);
+
+          this.shuffledAnswers = this.shuffleArray([this.goodAnswer, ...this.badAnswers]);
+          }
       
     },
     getRandomPhytosanitariesBadAnswers() {
@@ -183,7 +218,7 @@ export default {
       return randomIndices.map(i => otherObjects[i][questionTitle]);
     },
 
-    getFixedOrnamentalsBadAnswers(goodAnswer) {
+    getFixedBadAnswers(goodAnswer) {
       return ['Annuelle', 'Vivace'].filter(value => value !== goodAnswer);
     },
 

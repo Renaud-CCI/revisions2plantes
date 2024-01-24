@@ -6,7 +6,7 @@
     </div>
 
     <h1 
-      class="text-center"
+      class="text-center title-h1"
       :class="isRevision ? 'text-sky-600' : 'text-amber-500'"
       :style="{ fontSize: theme['title_fontsize'] + 'rem' , fontFamily: font }"
     >
@@ -76,7 +76,16 @@ export default {
   },
   computed: {
     font() {
-      return this.theme.name === 'phytosanitaries' ? 'Science' : 'Flower';
+      switch (this.theme.name) {
+        case 'phytosanitaries':
+          return 'Science';
+        case 'ornamentals':
+          return 'Flower';
+        case 'adventices':
+          return 'Herb';
+        default:
+          return 'Herb';
+      }
     }
   },
   methods: {
@@ -117,17 +126,20 @@ export default {
     handleToggleMode() {
       this.isRevision = !this.isRevision;
       const button = document.querySelector('.phytosanitary-refresh-div button');
+      const titleH1 = document.querySelector('.title-h1');
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
       if (this.isRevision) {
         button.style.opacity = "1";
         button.style.marginTop = "1rem";
         button.style.height = isMobile ? "2rem" : "3rem";
         button.style.pointerEvents = "auto";
+        titleH1.style.marginTop = "0";
       } else {
         button.style.opacity = "0";
         button.style.marginTop = "0";
         button.style.height = "0";
         button.style.pointerEvents = "none";
+        titleH1.style.marginTop = "0.5rem";
       }
       this.$emit('phytosanitaryIsRevisionEvent', this.isRevision);
     }
@@ -147,11 +159,18 @@ export default {
   src: url('@/assets/polices/Flower.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Herb';
+  src: url('@/assets/polices/Herb.ttf') format('truetype');
+}
+
 .container {
   padding-top: 3rem;
 
   h1 {
     padding-top: 1rem;
+    margin-top: 0;
+    transition: margin-top 0.5s;
   }
 }
 

@@ -9,7 +9,7 @@
 
       <div v-if="!recto" class="verso flex flex-col items-center justify-center">
         <div v-if="componentName === 'phytosanitaries'">
-          <h1 class="text-3xl mb-4 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h1>
+          <h2 class="text-3xl mb-4 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h2>
           <p class="text-lg text-center" v-if="itemInfos.nickname">{{ itemInfos.nickname }}</p>
           <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.family">famille :</p>
           <p class="text-lg text-center" v-if="itemInfos.family">{{ itemInfos.family }}</p>
@@ -28,7 +28,7 @@
         </div>
 
         <div v-if="componentName === 'ornamentals'">
-          <h1 class="text-3xl mb-4 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h1>
+          <h2 class="text-3xl mb-4 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h2>
           <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.gender">genre :</p>
           <p class="text-lg text-center" v-if="itemInfos.gender">{{ itemInfos.gender }}</p>
           <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.species">espèce :</p>
@@ -41,6 +41,15 @@
           <p class="text-lg text-center" v-if="itemInfos.type">{{ itemInfos.type }}</p>
           <p class="text-base mt-4 text-neutral-500 text-center" v-if="itemInfos.comments">caractéristiques :</p>
           <p class="text-lg text-center" v-if="itemInfos.comments">{{ itemInfos.comments }}</p>
+        </div>
+
+        <div v-if="componentName === 'adventices'">
+          <h2 class="text-4xl mb-8 text-center">{{ itemInfos.name }}</h2>
+          <h3 class="text-2xl italic text-center">{{ itemInfos.latin }}</h3>
+          <p class="text-lg mt-16 text-neutral-500 text-center">famille :</p>
+          <p class="text-xl text-center">{{ itemInfos.family }}</p>
+          <p class="text-lg mt-4 text-neutral-500 text-center">type :</p>
+          <p class="text-xl text-center">{{ itemInfos.type }}</p>
         </div>
 
 
@@ -78,7 +87,13 @@ export default {
       return this.componentItemInfos;
     },
     imagePath() {
-      return `/src/assets/images/${this.componentName}/${this.componentItemInfos.image}.jpg`;
+      if (this.componentName === 'adventices') {
+        const randomAdventiceImages = [`${this.componentItemInfos.image}1`, `${this.componentItemInfos.image}2`, `${this.componentItemInfos.image}3`];
+        const randomAdventiceImage = randomAdventiceImages[Math.floor(Math.random() * randomAdventiceImages.length)];
+        return `/src/assets/images/adventices/${randomAdventiceImage}.jpg`;
+      } else {
+        return `/src/assets/images/${this.componentName}/${this.componentItemInfos.image}.jpg`;
+      }
     }
   },
   methods: {

@@ -69,7 +69,7 @@ export default {
       ornamentalIsRevision: true,
       adventiceIsRevision: true,
       phytosanitaryIsRevision: true,
-      choosenTheme: 'ornamentals'
+      choosenTheme: 'adventices'
     };
   },
   mounted() {
