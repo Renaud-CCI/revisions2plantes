@@ -111,6 +111,7 @@ export default {
           break;
         default:
           this.componentArray = this.shuffle(Object.values(adventices));
+      }
     },
     shuffle(array) {
       let currentIndex = array.length, temporaryValue, randomIndex;
