@@ -47,9 +47,9 @@
 import gsap from 'gsap';
 import LearningContainer from './components/LearningContainer.vue';
 import ContactForm from './components/ContactForm.vue';
-import adventices from './assets/adventices.json';
-import ornamentals from './assets/ornamentals.json';
-import themes from './assets/themes.json';
+import adventices from '@/assets/adventices.json';
+import ornamentals from '@/assets/ornamentals.json';
+import themes from '@/assets/themes.json';
 
 export default {
   name: 'App',
