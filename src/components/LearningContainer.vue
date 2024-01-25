@@ -49,6 +49,7 @@ import ToggleSwitch from './ReusablesComponents/ToggleSwitch.vue';
 import Card from './ReusablesComponents/Card.vue';
 import QuizzCard from './ReusablesComponents/QuizzCard.vue';
 
+const assets = require.context('@/assets', false, /\.json$/);
 
 export default {
   name: 'LearningContainer',
@@ -96,8 +97,9 @@ export default {
     }
   },
   methods: {
+
     async loadData() {
-      let importedArray = await import(`../assets/${this.theme.json}`);
+      let importedArray = assets(`./${this.theme.json}`);
       this.componentArray = this.shuffle(Object.values(importedArray.default));
     },
     shuffle(array) {
