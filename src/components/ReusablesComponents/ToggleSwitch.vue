@@ -8,8 +8,8 @@
       <div class="wrap col-span-1 flex justify-center items-center">
         <div class="toggle">
           <div class="input-wrap">
-            <input @click="toggleMode" id="input-1" type="checkbox">
-            <label for="input-1">Select</label>
+            <input @click="toggleMode" id="input-3" type="checkbox">
+            <label for="input-3">Select</label>
           </div>
         </div>  
       </div>
@@ -28,34 +28,39 @@ import { gsap } from 'gsap';
 
 export default {
   name: 'ToggleSwitch',
-  data() {
-    return {
-      isOn: false
-    };
+  props: {
+    isRevision: {
+      type: Boolean,
+      default: false
+    }
+  },
+  watch: {
+    isRevision(newVal) {
+      this.toggleColor();
+      document.getElementById('input-3').checked = !newVal;
+    }
   },
   mounted () {
     this.toggleColor();
   },
   methods: {
     toggleMode() {
-      this.isOn = !this.isOn;
-      this.$emit('toggle-mode', this.isOn);
-      this.toggleColor();
+      this.$emit('toggle-mode');
     },
     toggleColor() {
-      switch (this.isOn) {
+      switch (this.isRevision) {
         case true:
-          gsap.to('.evaluation', { color: '#f59e0b', duration: 0.3 });
-          gsap.to('.revisions', { color: '#e5e5e5', duration: 0.3 });
+          gsap.to('.evaluation', { color: '#e5e5e5', duration: 0.3 });
+          gsap.to('.revisions', { color: '#0284c7', duration: 0.3 });          
           break;
         case false:
-          gsap.to('.evaluation', { color: '#e5e5e5', duration: 0.3 });
-          gsap.to('.revisions', { color: '#0284c7', duration: 0.3 });
+          gsap.to('.evaluation', { color: '#f59e0b', duration: 0.3 });
+          gsap.to('.revisions', { color: '#e5e5e5', duration: 0.3 });
           break;
       }
     },
     clicOnInput() {
-      document.getElementById('input-1').click();
+      document.getElementById('input-3').click();
     }
   }
 };

@@ -1,0 +1,19 @@
+{
+  "adventices": {
+    "name": "adventices",
+    "title": "adventices",
+    "json": "adventices.json"
+  },
+  "ornamentals": {
+    "name": "ornamentals",
+    "title": "ornementales",
+    "json": "ornamentals.json"
+  },
+  "phytosanitaries": {
+    "name": "phytosanitaries",
+    "title": "indesirables",
+    "json": "phytosanitaries.json"
+  }
+
+}
+

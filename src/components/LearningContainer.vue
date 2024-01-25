@@ -2,32 +2,33 @@
   <section class="container">
 
     <div class="score-div">
-      <PhytosanitaryScoreContainer :PhytosanitaryIsRevision="PhytosanitaryIsRevision" />
+      <ScoreContainer :isRevision="isRevision" />
     </div>
 
     <h1 
-      class="text-center"
-      :class="PhytosanitaryIsRevision ? 'text-sky-600' : 'text-amber-500'" 
+      class="text-center title-h1"
+      :class="isRevision ? 'text-sky-600' : 'text-amber-500'"
+      :style="{ fontFamily: font }"
     >
-      {{ 'Indesirables'.toUpperCase() }}
+      {{ theme['title'].toUpperCase() }}
     </h1>
 
     <div class="">
-      <PhytosanitaryToggleSwitch @phytosanitary-toggle-mode="handleToggleMode" />
+      <ToggleSwitch :isRevision="isRevision" @toggle-mode="handleToggleMode" />
     </div>
 
     <div class="phytosanitary-refresh-div flex justify-center items-center">
       <button class="text-white bg-sky-600 rounded" @click="refreshPage">Réinitialiser</button>
     </div>
 
-      <PhytosanitaryCard v-if="PhytosanitaryIsRevision" v-for="(phytosanitary, index) in phytosanitariesArray" :key="key" :phytosanitary="phytosanitary" />
+      <Card v-if="isRevision" v-for="(componentItemInfos, index) in componentArray" :key="key" :componentItemInfos="componentItemInfos" :componentName="theme['name']" />
 
-      <PhytosanitaryQuizzCardContainer v-if="!PhytosanitaryIsRevision" v-for="(phytosanitary, index) in phytosanitariesArray" :key="index" :index="index" :phytosanitariesArray="phytosanitariesArray" />
+      <QuizzCard v-if="!isRevision" v-for="(componentItemInfos, index) in componentArray" :key="index" :index="index" :componentArray="componentArray" :componentName="theme['name']" />
     
     <div class="phytosanitary-refresh-div flex justify-center items-center">
       <button 
         class="text-white px-4 py-1 rounded" 
-        :class="PhytosanitaryIsRevision ? 'bg-sky-600' : 'bg-amber-500'" 
+        :class="isRevision ? 'bg-sky-600' : 'bg-amber-500'" 
         @click="refreshClick"
       >
         Réinitialiser
@@ -43,27 +44,62 @@
 <script>
 import smoothscroll from 'smoothscroll-polyfill';
 smoothscroll.polyfill();
-import PhytosanitaryScoreContainer from './PhytosanitariesComponents/PhytosanitaryScoreContainer.vue';
-import PhytosanitaryToggleSwitch from './PhytosanitariesComponents/PhytosanitaryToggleSwitch.vue';
-import PhytosanitaryCard from './PhytosanitariesComponents/PhytosanitaryCard.vue';
-import PhytosanitaryQuizzCardContainer from './PhytosanitariesComponents/PhytosanitaryQuizzCard/PhytosanitaryQuizzCardContainer.vue';
-import phytosanitaries from '../assets/phytosanitaries.json';
+import ScoreContainer from './ReusablesComponents/ScoreContainer.vue';
+import ToggleSwitch from './ReusablesComponents/ToggleSwitch.vue';
+import Card from './ReusablesComponents/Card.vue';
+import QuizzCard from './ReusablesComponents/QuizzCard.vue';
+
 
 export default {
-  name: 'PhytosanitariesLearningContainer',
+  name: 'LearningContainer',
+  
   components: {
-    PhytosanitaryScoreContainer,
-    PhytosanitaryToggleSwitch,
-    PhytosanitaryCard,
-    PhytosanitaryQuizzCardContainer
+    ScoreContainer,
+    ToggleSwitch,
+    Card,
+    QuizzCard
+  },
+  props: {
+    theme: {
+      type: String,
+      required: true
+    }
   },
    data() {
     return {
-      phytosanitariesArray: this.shuffle(Object.values(phytosanitaries)),
-      PhytosanitaryIsRevision: true,
+      componentArray: null,
+      isRevision: true,
     };
   },
+  mounted() {
+    this.loadData();
+  },
+  watch: {
+    theme() {
+      this.componentArray = null;
+      this.isRevision = true;
+      this.loadData();
+    }
+  },
+  computed: {
+    font() {
+      switch (this.theme.name) {
+        case 'phytosanitaries':
+          return 'Science';
+        case 'ornamentals':
+          return 'Flower';
+        case 'adventices':
+          return 'Herb';
+        default:
+          return 'Herb';
+      }
+    }
+  },
   methods: {
+    async loadData() {
+      let importedArray = await import(`../assets/${this.theme.json}`);
+      this.componentArray = this.shuffle(Object.values(importedArray.default));
+    },
     shuffle(array) {
       let currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -95,21 +131,24 @@ export default {
       }, 800);
     },
     handleToggleMode() {
-      this.PhytosanitaryIsRevision = !this.PhytosanitaryIsRevision;
+      this.isRevision = !this.isRevision;
       const button = document.querySelector('.phytosanitary-refresh-div button');
+      const titleH1 = document.querySelector('.title-h1');
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
-      if (this.PhytosanitaryIsRevision) {
+      if (this.isRevision) {
         button.style.opacity = "1";
         button.style.marginTop = "1rem";
         button.style.height = isMobile ? "2rem" : "3rem";
         button.style.pointerEvents = "auto";
+        titleH1.style.marginTop = "0";
       } else {
         button.style.opacity = "0";
         button.style.marginTop = "0";
         button.style.height = "0";
         button.style.pointerEvents = "none";
+        titleH1.style.marginTop = "0.5rem";
       }
-      this.$emit('phytosanitaryIsRevisionEvent', this.PhytosanitaryIsRevision);
+      this.$emit('phytosanitaryIsRevisionEvent', this.isRevision);
     }
   }
 }
@@ -122,13 +161,24 @@ export default {
   src: url('@/assets/polices/Science.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Flower';
+  src: url('@/assets/polices/Flower.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Herb';
+  src: url('@/assets/polices/Herb.ttf') format('truetype');
+}
+
 .container {
   padding-top: 3rem;
 
   h1 {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     padding-top: 1rem;
-    font-family: 'Science', sans-serif;
+    margin-top: 0;
+    transition: margin-top 0.5s;
   }
 }
 
