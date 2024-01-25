@@ -2,50 +2,49 @@
   <section class="test">
 
     <nav class="fixed top-0 left-0 w-full bg-zinc-100 z-50">
-      <button id="adventices-button" @click="togglePage('adventicesPage')" :class="{ 'selected-button': adventicesPage }"><i class="lni lni-sprout"></i></button>
-      <button id="ornementals-button" @click="togglePage('ornamentalsPage')" :class="{ 'selected-button': ornamentalsPage }"> <i class="lni lni-flower"></i> </button>
-      <button id="phytosanitaries-button" @click="togglePage('phytosanitariesPage')" :class="{ 'selected-button': phytosanitariesPage }"> <i class="lni lni-first-aid"></i> </button>
+
+      <button id="adventices-button" @click="togglePage('adventices')" :class="{ 'selected-button': choosenTheme === 'adventices' }">
+        <i class="lni lni-sprout"></i>
+      </button>
+
+      <button id="ornementals-button" @click="togglePage('ornamentals')" :class="{ 'selected-button': choosenTheme === 'ornamentals' }">
+        <i class="lni lni-flower"></i>
+      </button>
+
+      <button id="phytosanitaries-button" @click="togglePage('phytosanitaries')" :class="{ 'selected-button': choosenTheme === 'phytosanitaries' }">
+        <i class="lni lni-first-aid"></i>
+      </button>
+
     </nav>
 
-    <div id="slide-container">
-    <div class="flex justify-center">
-          <AdventicesLearningContainer
-            :class="{ 'page-in': adventicesPage, 'page-out': !adventicesPage }"
-            @adventiceIsRevisionEvent="handleAdventiceIsRevisionEvent"
-            :theme="theme"
-          />
-
-          <OrnamentalsLearningContainer
-            :class="{ 'page-in': ornamentalsPage, 'page-out': !ornamentalsPage }"
-            @ornamentalIsRevisionEvent="handleOrnamentalIsRevisionEvent"
-            :theme="theme"
-          />
-
+    <div id="body-container">
+      <div id="slide-container">
+        <div class="flex justify-center">
+            
           <LearningContainer
-          :class="{ 'page-in': phytosanitariesPage, 'page-out': !phytosanitariesPage }"
-          @phytosanitaryIsRevisionEvent="handlePhytosanitaryIsRevisionEvent"
-          :theme="theme"
+            id="learning-container"
+            :theme="theme"
           />
-          
-          />
+            
 
-          </div>
+        </div>
+      </div>
+
+      <div
+        ref="contact-div"
+        class="flex justify-center items-center"
+        :style="{ 'margin-top': formMarginTop + 'vh' }"
+      >
+        <ContactForm />
+      </div>
+
     </div>
 
-    <div
-      ref="contact-div"
-      class="flex justify-center items-center"
-      :style="{ 'margin-top': formMarginTop + 'vh' }"
-    >
-      <ContactForm />
-    </div>
   </section>
 </template>
 
 <script>
-import AdventicesLearningContainer from './components/AdventicesLearningContainer.vue';
-import OrnamentalsLearningContainer from './components/OrnamentalsLearningContainer.vue';
-import PhytosanitariesLearningContainer from './components/PhytosanitariesLearningContainer.vue';
+import gsap from 'gsap';
 import LearningContainer from './components/LearningContainer.vue';
 import ContactForm from './components/ContactForm.vue';
 import adventices from './assets/adventices.json';
@@ -55,20 +54,11 @@ import themes from './assets/themes.json';
 export default {
   name: 'App',
   components: {
-    AdventicesLearningContainer,
-    OrnamentalsLearningContainer,
-    PhytosanitariesLearningContainer,
     LearningContainer,
     ContactForm
   },
   data() {
     return {
-      adventicesPage: true,
-      ornamentalsPage: false,
-      phytosanitariesPage: false,
-      ornamentalIsRevision: true,
-      adventiceIsRevision: true,
-      phytosanitaryIsRevision: true,
       choosenTheme: 'adventices'
     };
   },
@@ -81,20 +71,14 @@ export default {
   },
   methods: {
     togglePage(selectedPage) {
-      this.adventicesPage = false;
-      this.ornamentalsPage = false;
-      this.phytosanitariesPage = false;
-      this[selectedPage] = true;
-    },
-    handleOrnamentalIsRevisionEvent(value) {
-      this.ornamentalIsRevision = value;
-    },
-    handleAdventiceIsRevisionEvent(value) {
-      this.adventiceIsRevision = value;
-    },
-    handlePhytosanitaryIsRevisionEvent(value) {
-      this.phytosanitaryIsRevision = value;
-    },
+      const learningContainer = document.querySelector('#body-container');
+
+      gsap.to(learningContainer, { opacity: 0, duration: 0.2, ease: "sine.out", onComplete: () => {
+        this.choosenTheme = selectedPage;
+
+        gsap.to(learningContainer, { opacity: 1, duration: 1, ease: "sine.in" });
+      }});
+    }
   },
   watch: {
   }

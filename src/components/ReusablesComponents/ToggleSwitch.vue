@@ -35,8 +35,9 @@ export default {
     }
   },
   watch: {
-    isRevision() {
+    isRevision(newVal) {
       this.toggleColor();
+      document.getElementById('input-3').checked = !newVal;
     }
   },
   mounted () {

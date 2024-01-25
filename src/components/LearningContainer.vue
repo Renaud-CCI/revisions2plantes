@@ -8,7 +8,7 @@
     <h1 
       class="text-center title-h1"
       :class="isRevision ? 'text-sky-600' : 'text-amber-500'"
-      :style="{ fontSize: theme['title_fontsize'] + 'rem' , fontFamily: font }"
+      :style="{ fontFamily: font }"
     >
       {{ theme['title'].toUpperCase() }}
     </h1>
@@ -71,8 +71,16 @@ export default {
       isRevision: true,
     };
   },
-  created() {
+  mounted() {
     this.loadData();
+  },
+  watch: {
+    theme() {
+      console.log('ppl');
+      this.componentArray = null;
+      this.isRevision = true;
+      this.loadData();
+    }
   },
   computed: {
     font() {
@@ -168,6 +176,7 @@ export default {
   padding-top: 3rem;
 
   h1 {
+    font-size: 3.2rem;
     padding-top: 1rem;
     margin-top: 0;
     transition: margin-top 0.5s;

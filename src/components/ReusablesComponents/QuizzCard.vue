@@ -109,6 +109,12 @@ export default {
   mounted() {
     this.getQuizzData();
   },
+  watch: {
+    componentArray() {
+      this.getQuizzData();
+      console.log('watché');
+    },
+  },
   computed: {
     itemInfos() {
       return this.componentArray[this.index];
@@ -126,27 +132,18 @@ export default {
       switch (this.questionTitle) {
         case 'name':
           return 'Nom commun :';
-          break;
         case 'gender':
           return 'Genre :';
-          break;
         case 'species':
           return 'Espèce :';
-          break;
         case 'family':
           return 'Famille :';
-          break;
         case 'type':
           return 'Type :';
-          break;      
         case 'latin':
           return 'Nom latin :';
-          break;
-        case 'type':
-          return 'Type :';
-          break;      
         default:
-          break;
+          return '';
       }
     }
   },
