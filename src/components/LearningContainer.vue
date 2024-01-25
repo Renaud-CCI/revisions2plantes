@@ -76,7 +76,6 @@ export default {
   },
   watch: {
     theme() {
-      console.log('ppl');
       this.componentArray = null;
       this.isRevision = true;
       this.loadData();
