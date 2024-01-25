@@ -48,8 +48,9 @@ import ScoreContainer from './ReusablesComponents/ScoreContainer.vue';
 import ToggleSwitch from './ReusablesComponents/ToggleSwitch.vue';
 import Card from './ReusablesComponents/Card.vue';
 import QuizzCard from './ReusablesComponents/QuizzCard.vue';
-
-const assets = require.context('@/assets', false, /\.json$/);
+import ornamentals from '@/assets/ornamentals.json';
+import phytosanitaries from '@/assets/phytosanitaries.json';
+import adventices from '@/assets/adventices.json';
 
 export default {
   name: 'LearningContainer',
@@ -97,10 +98,19 @@ export default {
     }
   },
   methods: {
-
-    async loadData() {
-      let importedArray = assets(`./${this.theme.json}`);
-      this.componentArray = this.shuffle(Object.values(importedArray.default));
+    loadData() {
+      switch (this.theme.name) {
+        case 'phytosanitaries':
+          this.componentArray = this.shuffle(Object.values(phytosanitaries));
+          break;
+        case 'ornamentals':
+          this.componentArray = this.shuffle(Object.values(ornamentals));
+          break;
+        case 'adventices':
+          this.componentArray = this.shuffle(Object.values(adventices));
+          break;
+        default:
+          this.componentArray = this.shuffle(Object.values(adventices));
     },
     shuffle(array) {
       let currentIndex = array.length, temporaryValue, randomIndex;
