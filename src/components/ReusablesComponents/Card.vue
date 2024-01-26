@@ -4,7 +4,7 @@
     <div class="card bg-sky-100 rounded-xl flex flex-col justify-center items-center" @click="flipCard">
 
       <div v-if="recto" class="recto flex flex-col justify-center items-center">
-        <img :src="imagePath" :alt="itemInfos.name + '_Img'" class="adventice-image rounded-xl">
+        <img v-if="imgLoad" :src="imgSrc" :alt="itemInfos.name + '_Img'" class="adventice-image rounded-xl">
       </div>
 
       <div v-if="!recto" class="verso flex flex-col items-center justify-center">
@@ -79,21 +79,41 @@ export default {
   data() {
     return {
       recto: true,
-      imgSrc: ''
+      imgSrc: '',
+      imgLoad: false
     };
+  },
+  async created() {
+    try {
+      let imageName = this.componentItemInfos.image;
+      let images;
+
+      switch (this.componentName) {
+        case 'adventices':
+          const possibleImages = [`${imageName}1`, `${imageName}2`, `${imageName}3`];
+          const randomIndex = Math.floor(Math.random() * possibleImages.length);
+          imageName = possibleImages[randomIndex];
+          images = import.meta.glob('@/assets/images/adventices/*');
+          break;
+        case 'phytosanitaries':
+          images = import.meta.glob('@/assets/images/phytosanitaries/*');
+          break;
+        case 'ornamentals':
+          images = import.meta.glob('@/assets/images/ornamentals/*');
+          break;
+      } 
+
+      const module = await images[`/src/assets/images/${this.componentName}/${imageName}.jpg`]();
+      this.imgSrc = module.default;
+    } catch (error) {
+      this.imgSrc = null;
+    } finally {
+      this.imgLoad = true;
+    }
   },
   computed: {
     itemInfos() {
       return this.componentItemInfos;
-    },
-    imagePath() {
-      if (this.componentName === 'adventices') {
-        const randomAdventiceImages = [`${this.componentItemInfos.image}1`, `${this.componentItemInfos.image}2`, `${this.componentItemInfos.image}3`];
-        const randomAdventiceImage = randomAdventiceImages[Math.floor(Math.random() * randomAdventiceImages.length)];
-        return `/src/assets/images/adventices/${randomAdventiceImage}.jpg`;
-      } else {
-        return `/src/assets/images/${this.componentName}/${this.componentItemInfos.image}.jpg`;
-      }
     }
   },
   methods: {
