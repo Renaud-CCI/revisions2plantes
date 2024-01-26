@@ -141,7 +141,6 @@ export default {
   watch: {
     componentArray() {
       this.getQuizzData();
-      console.log('watché');
     },
   },
   computed: {

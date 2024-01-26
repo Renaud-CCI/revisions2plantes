@@ -84,31 +84,11 @@ export default {
     };
   },
   async created() {
-    try {
-      let imageName = this.componentItemInfos.image;
-      let images;
-
-      switch (this.componentName) {
-        case 'adventices':
-          const possibleImages = [`${imageName}1`, `${imageName}2`, `${imageName}3`];
-          const randomIndex = Math.floor(Math.random() * possibleImages.length);
-          imageName = possibleImages[randomIndex];
-          images = import.meta.glob('@/assets/images/adventices/*');
-          break;
-        case 'phytosanitaries':
-          images = import.meta.glob('@/assets/images/phytosanitaries/*');
-          break;
-        case 'ornamentals':
-          images = import.meta.glob('@/assets/images/ornamentals/*');
-          break;
-      } 
-
-      const module = await images[`/src/assets/images/${this.componentName}/${imageName}.jpg`]();
-      this.imgSrc = module.default;
-    } catch (error) {
-      this.imgSrc = null;
-    } finally {
-      this.imgLoad = true;
+    await this.loadImage();
+  },
+  watch: {
+    async componentName() {
+      await this.loadImage();
     }
   },
   computed: {
@@ -117,6 +97,34 @@ export default {
     }
   },
   methods: {
+    async loadImage() {
+      try {
+        let imageName = this.componentItemInfos.image;
+        let images;
+
+        switch (this.componentName) {
+          case 'adventices':
+            const possibleImages = [`${imageName}1`, `${imageName}2`, `${imageName}3`];
+            const randomIndex = Math.floor(Math.random() * possibleImages.length);
+            imageName = possibleImages[randomIndex];
+            images = import.meta.glob('@/assets/images/adventices/*');
+            break;
+          case 'phytosanitaries':
+            images = import.meta.glob('@/assets/images/phytosanitaries/*');
+            break;
+          case 'ornamentals':
+            images = import.meta.glob('@/assets/images/ornamentals/*');
+            break;
+        } 
+
+        const module = await images[`/src/assets/images/${this.componentName}/${imageName}.jpg`]();
+        this.imgSrc = module.default;
+      } catch (error) {
+        this.imgSrc = null;
+      } finally {
+        this.imgLoad = true;
+      }
+    },
     flipCard() {
       let tl = gsap.timeline();
       if (this.recto){
