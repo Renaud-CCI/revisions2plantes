@@ -42,25 +42,26 @@ export default {
 #score-container {
   position: fixed;
   z-index: 5;
-  width: 20vw;
-  height: 55px;
+  width: 38vw;
+  height: 35px;
   border-radius: 0 0 10px 0;
   opacity: 0.8;
-  font-size: 2rem;
+  font-size: 1.2rem;
   transition: margin-top 0.3s;
 
   &.is-revision {
-    margin-top: -55px;
+    margin-top: -35px;
   }
 
 
-  @media screen and (max-width: 768px) {
-    width: 38vw;
-    height: 35px;
-    font-size: 1.2rem;
+  @media screen and (min-width: 768px) {
+    width: 20vw;
+    height: 55px;
+    font-size: 2rem;
+    border-radius: 0 0 10px 10px;
 
     &.is-revision {
-      margin-top: -35px;
+      margin-top: -55px;
     }
   }
 }

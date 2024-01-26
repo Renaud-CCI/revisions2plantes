@@ -89,7 +89,7 @@ export default {
 
 nav {
   height: 3rem;
-  padding: 0.2rem 30% 0 30%;
+  padding: 0.2rem 0;
 
   button {
     width: 33%;
@@ -121,13 +121,14 @@ nav {
   100% { opacity: 1; }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   nav {
-    height: 3rem; 
-    padding: 0.2rem 0;
+    height: 4rem;
+    padding: 0.2rem 30% 0 30%;
 
     button {
-      height: 3rem;
+      height: 4rem;
+      font-size: 2.6rem;
     }
   }
 } 
