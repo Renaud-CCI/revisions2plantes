@@ -6,7 +6,7 @@
       <div v-if="recto" class="recto grid grid-cols-1 justify-center items-center">
 
         <div class="img-div col-span-1 flex justify-center items-center">
-          <img :src="imagePath" :alt="itemInfos.name + '_Img'" class="adventice-image rounded-xl">
+          <img v-if="imgLoad" :src="imgSrc" :alt="itemInfos.name + '_Img'" class="adventice-image rounded-xl">
         </div>
 
         <div class="answers-div col-span-1 flex flex-col justify-start items-center">
@@ -109,6 +109,35 @@ export default {
   mounted() {
     this.getQuizzData();
   },
+  async created() {
+    try {
+      let imageName = this.componentArray[this.index]['image'];
+      let images;
+
+      switch (this.componentName) {
+        case 'adventices':
+          const possibleImages = [`${imageName}1`, `${imageName}2`, `${imageName}3`];
+          const randomIndex = Math.floor(Math.random() * possibleImages.length);
+          imageName = possibleImages[randomIndex];
+          images = import.meta.glob('@/assets/images/adventices/*');
+          break;
+        case 'phytosanitaries':
+          images = import.meta.glob('@/assets/images/phytosanitaries/*');
+          break;
+        case 'ornamentals':
+          images = import.meta.glob('@/assets/images/ornamentals/*');
+          break;
+      } 
+
+      const module = await images[`/src/assets/images/${this.componentName}/${imageName}.jpg`]();
+      this.imgSrc = module.default;
+    } catch (error) {
+      console.log(error);
+      this.imgSrc = null;
+    } finally {
+      this.imgLoad = true;
+    }
+  },
   watch: {
     componentArray() {
       this.getQuizzData();
@@ -118,15 +147,6 @@ export default {
   computed: {
     itemInfos() {
       return this.componentArray[this.index];
-    },
-    imagePath() {
-      if (this.componentName === 'adventices') {
-        const randomAdventiceImages = [`${this.componentArray[this.index]['image']}1`, `${this.componentArray[this.index]['image']}2`, `${this.componentArray[this.index]['image']}3`];
-        const randomAdventiceImage = randomAdventiceImages[Math.floor(Math.random() * randomAdventiceImages.length)];
-        return `/src/assets/images/adventices/${randomAdventiceImage}.jpg`;
-      } else {
-        return `/src/assets/images/${this.componentName}/${this.componentArray[this.index]['image']}.jpg`;
-      }
     },
     displayableQuestionTitle() {
       switch (this.questionTitle) {
@@ -279,18 +299,7 @@ export default {
         this.borderResponseColor = '#be123c'; //red-700
       }, 250);
     }
-  },
-  async created() {
-    try {
-        const images = import.meta.glob('@/assets/images/phytosanitaries/*');
-        const module = await images[`/src/assets/images/phytosanitaries/${this.componentArray[this.index].image}.jpg`]();
-        this.imgSrc = module.default;
-    } catch (error) {
-        this.imgSrc = null;
-    } finally {
-        this.imgLoad = true;
-    }
-  },
+  }
 }
 </script>
 
