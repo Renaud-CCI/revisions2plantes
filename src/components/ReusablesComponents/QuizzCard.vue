@@ -357,8 +357,10 @@ export default {
 
   @media screen and (min-width: 768px) {
     .card {
+      height: 72vh;
       width: 25vw;
-      height: 80vh;
+
+      .recto {
 
         .answers-div {
           height: 40vh;
@@ -378,6 +380,22 @@ export default {
       }
     }
   }
+  
 
+  @media screen and (min-width: 1400px) {
+    .card {
+      height: 65vh;
+
+      .recto {
+        .answers-div {
+
+          button {
+          font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+}
 
 </style>
