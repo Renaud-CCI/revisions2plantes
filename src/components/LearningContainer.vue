@@ -78,9 +78,9 @@ export default {
   },
   watch: {
     theme() {
-      this.componentArray = null;
-      this.isRevision = true;
+      this.resetData();
       this.loadData();
+      this.adjustTitleMargin();
     }
   },
   computed: {
@@ -112,6 +112,13 @@ export default {
         default:
           this.componentArray = this.shuffle(Object.values(adventices));
       }
+    },
+    resetData() {
+      this.componentArray = null;
+      this.isRevision = true;
+    },
+    adjustTitleMargin() {
+      document.querySelector('.title-h1').style.marginTop = "0";
     },
     shuffle(array) {
       let currentIndex = array.length, temporaryValue, randomIndex;
