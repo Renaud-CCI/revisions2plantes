@@ -305,8 +305,8 @@ export default {
 <style scoped lang="scss">
 .adventice-card {
   .card {
-    width: 25vw;
-    height: 80vh;
+    width: 75vw;
+    height: 75vh;
 
     .recto {
         height: 100%;
@@ -324,7 +324,7 @@ export default {
       }
 
       .answers-div {
-        height: 40vh;
+        height: 35vh;
 
         p {
           font-size: 1.6rem;
@@ -334,12 +334,12 @@ export default {
 
         button {
           width: 100%;
-          min-height: 2.75rem;
-          font-size: 1.4rem;
+          min-height: 2.2rem;
+          font-size: 1.2rem;
           background-color: #f59e0b; //amber-500
           color: white;
           padding: 0.4rem auto;
-          margin-bottom: 1rem;
+          margin-bottom: 0.8rem;
           border-radius: 0.5rem;
         }
       }
@@ -349,50 +349,35 @@ export default {
       transform: rotateY(180deg);
 
       .response-logo {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
     }
 
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) {
     .card {
-      width: 75vw;
-      height: 75vh;
-
-      .recto {
-        height: 100%;
-        width: 80%;
-
-        .img-div {
-          height: 40vh;
-          width: 100%;
-
-          .adventice-image {
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
-          }
-        }
+      width: 25vw;
+      height: 80vh;
 
         .answers-div {
-          height: 35vh;
+          height: 40vh;
 
           button {
-          min-height: 2.2rem;
-          font-size: 1.2rem;
-          margin-bottom: 0.8rem;
-        }
+          min-height: 2.75rem;
+          font-size: 1.4rem;
+          margin-bottom: 1rem;
+          }
         }
       }
 
       .verso {
-      .response-logo {
-        font-size: 2.5rem;
+        .response-logo {
+          font-size: 3rem;
+        }
       }
-    }
     }
   }
 
-}
+
 </style>
