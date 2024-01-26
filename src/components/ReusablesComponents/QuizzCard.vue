@@ -366,7 +366,7 @@ export default {
           height: 40vh;
 
           button {
-          min-height: 2.75rem;
+          min-height: 2.6rem;
           font-size: 1.4rem;
           margin-bottom: 1rem;
           }
@@ -390,6 +390,7 @@ export default {
         .answers-div {
 
           button {
+          min-height: 2.75rem;
           font-size: 1.8rem;
           }
         }
