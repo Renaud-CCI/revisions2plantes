@@ -21,49 +21,49 @@
       <div v-if="!recto" class="verso flex flex-col items-center justify-center">
         <div v-if="componentName === 'phytosanitaries'">
           <p class="response-logo mb-2 text-center">{{ responseLogo }}</p>
-          <h2 class="mb-2 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h2>
+          <h2 class="mb-2 text-neutral-900 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h2>
           <p class="phytosanitaries-response-p text-center" v-if="itemInfos.nickname">{{ itemInfos.nickname }}</p>
           <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.family">famille :</p>
-          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.family">{{ itemInfos.family }}</p>
+          <p class="phytosanitaries-response-p text-neutral-700 text-center" v-if="itemInfos.family">{{ itemInfos.family }}</p>
           <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.action">mode d'action :</p>
-          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.action">{{ itemInfos.action }}</p>
+          <p class="phytosanitaries-response-p text-neutral-700 text-center" v-if="itemInfos.action">{{ itemInfos.action }}</p>
           <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.target">cible :</p>
-          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.target">{{ itemInfos.target }}</p>
+          <p class="phytosanitaries-response-p text-neutral-700 text-center" v-if="itemInfos.target">{{ itemInfos.target }}</p>
           <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.climate">climat :</p>
-          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.climate">{{ itemInfos.climate }}</p>
+          <p class="phytosanitaries-response-p text-neutral-700 text-center" v-if="itemInfos.climate">{{ itemInfos.climate }}</p>
           <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.conditions">conditions :</p>
-          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.conditions">{{ itemInfos.conditions }}</p>
+          <p class="phytosanitaries-response-p text-neutral-700 text-center" v-if="itemInfos.conditions">{{ itemInfos.conditions }}</p>
           <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.observation">observations :</p>
-          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.observation">{{ itemInfos.observation }}</p>
+          <p class="phytosanitaries-response-p text-neutral-700 text-center" v-if="itemInfos.observation">{{ itemInfos.observation }}</p>
           <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.prevention">prévention :</p>
-          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.prevention">{{ itemInfos.prevention }}</p>
+          <p class="phytosanitaries-response-p text-neutral-700 text-center" v-if="itemInfos.prevention">{{ itemInfos.prevention }}</p>
         </div>
 
         <div v-if="componentName === 'ornamentals'">
           <p class="response-logo mb-4 text-center">{{ responseLogo }}</p>
-          <h2 class="mb-2 md:mb-4 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h2>
+          <h2 class="mb-2 md:mb-4 text-neutral-900 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h2>
           <p class="ornamentals-title-p mt-4 text-neutral-500 text-center" v-if="itemInfos.gender">genre :</p>
-          <p class="ornamentals-response-p text-center" v-if="itemInfos.gender">{{ itemInfos.gender }}</p>
+          <p class="ornamentals-response-p text-neutral-700 text-center" v-if="itemInfos.gender">{{ itemInfos.gender }}</p>
           <p class="ornamentals-title-p mt-2 text-neutral-500 text-center" v-if="itemInfos.species">espèce :</p>
-          <p class="ornamentals-response-p text-center" v-if="itemInfos.species">{{ itemInfos.species }}</p>
+          <p class="ornamentals-response-p text-neutral-700 text-center" v-if="itemInfos.species">{{ itemInfos.species }}</p>
           <p class="ornamentals-title-p mt-2 text-neutral-500 text-center" v-if="itemInfos.variety">variété :</p>
-          <p class="ornamentals-response-p text-center" v-if="itemInfos.variety">{{ itemInfos.variety }}</p>
+          <p class="ornamentals-response-p text-neutral-700 text-center" v-if="itemInfos.variety">{{ itemInfos.variety }}</p>
           <p class="ornamentals-title-p mt-2 text-neutral-500 text-center" v-if="itemInfos.family">famille :</p>
-          <p class="ornamentals-response-p text-center" v-if="itemInfos.family">{{ itemInfos.family }}</p>
+          <p class="ornamentals-response-p text-neutral-700 text-center" v-if="itemInfos.family">{{ itemInfos.family }}</p>
           <p class="ornamentals-title-p mt-2 text-neutral-500 text-center" v-if="itemInfos.type">type :</p>
-          <p class="ornamentals-response-p text-center" v-if="itemInfos.type">{{ itemInfos.type }}</p>
+          <p class="ornamentals-response-p text-neutral-700 text-center" v-if="itemInfos.type">{{ itemInfos.type }}</p>
           <p class="ornamentals-title-p mt-2 text-neutral-500 text-center" v-if="itemInfos.comments">caractéristiques :</p>
-          <p class="ornamentals-response-p text-center" v-if="itemInfos.comments">{{ itemInfos.comments }}</p>
+          <p class="ornamentals-response-p text-neutral-700 text-center" v-if="itemInfos.comments">{{ itemInfos.comments }}</p>
         </div>
 
         <div v-if="componentName === 'adventices'">
           <p class="response-logo mb-8 text-center">{{ responseLogo }}</p>
-          <h2 class="adventices-title mb-4 text-center">{{ itemInfos.name }}</h2>
-          <h3 class="italic text-center">{{ itemInfos.latin }}</h3>
+          <h2 class="adventices-title mb-4 text-neutral-900 text-center">{{ itemInfos.name }}</h2>
+          <h3 class="italic text-neutral-700 text-center">{{ itemInfos.latin }}</h3>
           <p class="adventices-title-p mt-8 text-neutral-500 text-center">famille :</p>
-          <p class="adventices-response-p text-center">{{ itemInfos.family }}</p>
+          <p class="adventices-response-p text-neutral-700 text-center">{{ itemInfos.family }}</p>
           <p class="adventices-title-p mt-4 text-neutral-500 text-center">type :</p>
-          <p class="adventices-response-p text-center">{{ itemInfos.type }}</p>
+          <p class="adventices-response-p text-neutral-700 text-center">{{ itemInfos.type }}</p>
         </div>
       </div>
 
