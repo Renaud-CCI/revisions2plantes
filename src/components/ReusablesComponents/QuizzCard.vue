@@ -400,10 +400,14 @@ export default {
         .answers-div {
           height: 40vh;
 
+          p {
+            font-size: 1.2rem;
+          }
+
           button {
-          min-height: 2.4rem;
-          font-size: 1.2rem;
-          margin-bottom: 1rem;
+          min-height: 2.2rem;
+          font-size: 1.1rem;
+          margin-bottom: 0.8rem;
           }
         }
       }
