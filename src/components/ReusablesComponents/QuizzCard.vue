@@ -410,40 +410,40 @@ export default {
 
       .verso {
         .response-logo {
-          font-size: 2.8rem;
+          font-size: 2.7rem;
         }
 
         h2,
         h3 {
-          font-size: 1.875rem;
+          font-size: 1.775rem;
         }
 
         .adventices-title {
-          font-size: 2.5rem;
+          font-size: 2.4rem;
         }
 
         .phytosanitaries-title-p {
-          font-size: 1rem;
+          font-size: 0.9rem;
         }
 
         .phytosanitaries-response-p {
-          font-size: 1.125rem;
+          font-size: 1.025rem;
         }
 
         .ornamentals-response-p {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
         }
 
         .ornamentals-title-p {
-          font-size: 1.1rem;
+          font-size: 1rem;
         }
 
         .adventices-title-p {
-          font-size: 1.5rem;
+          font-size: 1.4rem;
         }
 
         .adventices-response-p {
-          font-size: 1.875rem;
+          font-size: 1.775rem;
         }
 
         

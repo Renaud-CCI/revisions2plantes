@@ -207,45 +207,45 @@ export default {
   @media screen and (min-width: 768px) {
     .card {
       width: 25vw;
-      height: 72vh;
+      height: 75vh;
 
 
       .verso {
         .response-logo {
-          font-size: 2.8rem;
+          font-size: 2.7rem;
         }
 
         h2,
         h3 {
-          font-size: 1.875rem;
+          font-size: 1.775rem;
         }
 
         .adventices-title {
-          font-size: 2.5rem;
+          font-size: 2.4rem;
         }
 
         .phytosanitaries-title-p {
-          font-size: 1rem;
+          font-size: 0.9rem;
         }
 
         .phytosanitaries-response-p {
-          font-size: 1.125rem;
+          font-size: 1.025rem;
         }
 
         .ornamentals-response-p {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
         }
 
         .ornamentals-title-p {
-          font-size: 1.1rem;
+          font-size: 1rem;
         }
 
         .adventices-title-p {
-          font-size: 1.5rem;
+          font-size: 1.4rem;
         }
 
         .adventices-response-p {
-          font-size: 1.875rem;
+          font-size: 1.775rem;
         }
 
         
@@ -255,41 +255,41 @@ export default {
 
     @media screen and (min-width: 1700px) {
     .card {
-      height: 62vh;     
+      height: 65vh;     
 
       .verso {
 
         h2,
         h3 {
-          font-size: 3rem;
+          font-size: 2.9rem;
         }
 
         .adventices-title {
-          font-size: 3.6rem;
+          font-size: 3.5rem;
         }
 
         .phytosanitaries-title-p {
-          font-size: 1.4rem;
+          font-size: 1.5rem;
         }
 
         .phytosanitaries-response-p {
-          font-size: 1.7rem;
+          font-size: 1.6rem;
         }
 
         .ornamentals-response-p {
-          font-size: 1.8rem;
+          font-size: 1.7rem;
         }
 
         .ornamentals-title-p {
-          font-size: 1.4rem;
+          font-size: 1.3rem;
         }
 
         .adventices-title-p {
-          font-size: 1.75rem;
+          font-size: 1.65rem;
         }
 
         .adventices-response-p {
-          font-size: 2rem;
+          font-size: 1.9rem;
         }
 
         
