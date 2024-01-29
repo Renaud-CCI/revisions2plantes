@@ -328,7 +328,7 @@ export default {
         height: 35vh;
 
         p {
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           margin: 0.5rem 0;
           color: #f59e0b; //amber-500
         }
@@ -336,7 +336,7 @@ export default {
         button {
           width: 100%;
           min-height: 2.2rem;
-          font-size: 1.2rem;
+          font-size: 1rem;
           background-color: #f59e0b; //amber-500
           color: white;
           padding: 0.4rem auto;
@@ -401,8 +401,8 @@ export default {
           height: 40vh;
 
           button {
-          min-height: 2.6rem;
-          font-size: 1.4rem;
+          min-height: 2.4rem;
+          font-size: 1.2rem;
           margin-bottom: 1rem;
           }
         }
