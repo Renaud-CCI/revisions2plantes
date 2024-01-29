@@ -9,47 +9,47 @@
 
       <div v-if="!recto" class="verso flex flex-col items-center justify-center">
         <div v-if="componentName === 'phytosanitaries'">
-          <h2 class="text-3xl md:text-4xl mb-4 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h2>
-          <p class="text-lg md:text-2xl text-center" v-if="itemInfos.nickname">{{ itemInfos.nickname }}</p>
-          <p class="text-base md:text-lg mt-1 md:mt-4 text-neutral-500 text-center" v-if="itemInfos.family">famille :</p>
-          <p class="text-base md:text-xl text-center" v-if="itemInfos.family">{{ itemInfos.family }}</p>
-          <p class="text-base md:text-lg mt-1 md:mt-4 text-neutral-500 text-center" v-if="itemInfos.action">mode d'action :</p>
-          <p class="text-base md:text-xl text-center" v-if="itemInfos.action">{{ itemInfos.action }}</p>
-          <p class="text-base md:text-lg mt-1 md:mt-4 text-neutral-500 text-center" v-if="itemInfos.target">cible :</p>
-          <p class="text-base md:text-xl text-center" v-if="itemInfos.target">{{ itemInfos.target }}</p>
-          <p class="text-base md:text-lg mt-1 md:mt-4 text-neutral-500 text-center" v-if="itemInfos.climate">climat :</p>
-          <p class="text-base md:text-xl text-center" v-if="itemInfos.climate">{{ itemInfos.climate }}</p>
-          <p class="text-base md:text-lg mt-1 md:mt-4 text-neutral-500 text-center" v-if="itemInfos.conditions">conditions :</p>
-          <p class="text-base md:text-xl text-center" v-if="itemInfos.conditions">{{ itemInfos.conditions }}</p>
-          <p class="text-base md:text-lg mt-1 md:mt-4 text-neutral-500 text-center" v-if="itemInfos.observation">observations :</p>
-          <p class="text-base md:text-xl text-center" v-if="itemInfos.observation">{{ itemInfos.observation }}</p>
-          <p class="text-base md:text-lg mt-1 md:mt-4 text-neutral-500 text-center" v-if="itemInfos.prevention">prévention :</p>
-          <p class="text-base md:text-xl text-center" v-if="itemInfos.prevention">{{ itemInfos.prevention }}</p>
+          <h2 class="mb-2 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h2>
+          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.nickname">{{ itemInfos.nickname }}</p>
+          <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.family">famille :</p>
+          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.family">{{ itemInfos.family }}</p>
+          <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.action">mode d'action :</p>
+          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.action">{{ itemInfos.action }}</p>
+          <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.target">cible :</p>
+          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.target">{{ itemInfos.target }}</p>
+          <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.climate">climat :</p>
+          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.climate">{{ itemInfos.climate }}</p>
+          <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.conditions">conditions :</p>
+          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.conditions">{{ itemInfos.conditions }}</p>
+          <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.observation">observations :</p>
+          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.observation">{{ itemInfos.observation }}</p>
+          <p class="phytosanitaries-title-p mt-1 text-neutral-500 text-center" v-if="itemInfos.prevention">prévention :</p>
+          <p class="phytosanitaries-response-p text-center" v-if="itemInfos.prevention">{{ itemInfos.prevention }}</p>
         </div>
 
         <div v-if="componentName === 'ornamentals'">
-          <h2 class="text-3xl md:text-6xl mb-4 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h2>
-          <p class="text-base md:text-2xl mt-4 text-neutral-500 text-center" v-if="itemInfos.gender">genre :</p>
-          <p class="text-lg md:text-3xl text-center" v-if="itemInfos.gender">{{ itemInfos.gender }}</p>
-          <p class="text-base md:text-2xl mt-4 text-neutral-500 text-center" v-if="itemInfos.species">espèce :</p>
-          <p class="text-lg md:text-3xl text-center" v-if="itemInfos.species">{{ itemInfos.species }}</p>
-          <p class="text-base md:text-2xl mt-4 text-neutral-500 text-center" v-if="itemInfos.variety">variété :</p>
-          <p class="text-lg md:text-3xl text-center" v-if="itemInfos.variety">{{ itemInfos.variety }}</p>
-          <p class="text-base md:text-2xl mt-4 text-neutral-500 text-center" v-if="itemInfos.family">famille :</p>
-          <p class="text-lg md:text-3xl text-center" v-if="itemInfos.family">{{ itemInfos.family }}</p>
-          <p class="text-base md:text-2xl mt-4 text-neutral-500 text-center" v-if="itemInfos.type">type :</p>
-          <p class="text-lg md:text-3xl text-center" v-if="itemInfos.type">{{ itemInfos.type }}</p>
-          <p class="text-base md:text-2xl mt-4 text-neutral-500 text-center" v-if="itemInfos.comments">caractéristiques :</p>
-          <p class="text-lg md:text-3xl text-center" v-if="itemInfos.comments">{{ itemInfos.comments }}</p>
+          <h2 class="mb-2 md:mb-4 text-center" v-if="itemInfos.name">{{ itemInfos.name }}</h2>
+          <p class="ornamentals-title-p mt-4 text-neutral-500 text-center" v-if="itemInfos.gender">genre :</p>
+          <p class="ornamentals-response-p text-center" v-if="itemInfos.gender">{{ itemInfos.gender }}</p>
+          <p class="ornamentals-title-p mt-2 text-neutral-500 text-center" v-if="itemInfos.species">espèce :</p>
+          <p class="ornamentals-response-p text-center" v-if="itemInfos.species">{{ itemInfos.species }}</p>
+          <p class="ornamentals-title-p mt-2 text-neutral-500 text-center" v-if="itemInfos.variety">variété :</p>
+          <p class="ornamentals-response-p text-center" v-if="itemInfos.variety">{{ itemInfos.variety }}</p>
+          <p class="ornamentals-title-p mt-2 text-neutral-500 text-center" v-if="itemInfos.family">famille :</p>
+          <p class="ornamentals-response-p text-center" v-if="itemInfos.family">{{ itemInfos.family }}</p>
+          <p class="ornamentals-title-p mt-2 text-neutral-500 text-center" v-if="itemInfos.type">type :</p>
+          <p class="ornamentals-response-p text-center" v-if="itemInfos.type">{{ itemInfos.type }}</p>
+          <p class="ornamentals-title-p mt-2 text-neutral-500 text-center" v-if="itemInfos.comments">caractéristiques :</p>
+          <p class="ornamentals-response-p text-center" v-if="itemInfos.comments">{{ itemInfos.comments }}</p>
         </div>
 
         <div v-if="componentName === 'adventices'">
-          <h2 class="text-4xl md:text-6xl mb-8 text-center">{{ itemInfos.name }}</h2>
-          <h3 class="text-2xl md:text-4xl italic text-center">{{ itemInfos.latin }}</h3>
-          <p class="text-lg md:text-3xl mt-16 text-neutral-500 text-center">famille :</p>
-          <p class="text-xl md:text-3xl text-center">{{ itemInfos.family }}</p>
-          <p class="text-lg md:text-3xl mt-4 text-neutral-500 text-center">type :</p>
-          <p class="text-xl md:text-3xl text-center">{{ itemInfos.type }}</p>
+          <h2 class="adventices-title mb-4 text-center">{{ itemInfos.name }}</h2>
+          <h3 class="italic text-center">{{ itemInfos.latin }}</h3>
+          <p class="adventices-title-p mt-8 text-neutral-500 text-center">famille :</p>
+          <p class="adventices-response-p text-center">{{ itemInfos.family }}</p>
+          <p class="adventices-title-p mt-4 text-neutral-500 text-center">type :</p>
+          <p class="adventices-response-p text-center">{{ itemInfos.type }}</p>
         </div>
 
 
@@ -166,6 +166,40 @@ export default {
 
     .verso {
       transform: rotateY(180deg);
+
+
+      h2,
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      .adventices-title {
+        font-size: 2rem;
+      }
+
+      .phytosanitaries-title-p {
+        font-size: 0.875rem;
+      }
+
+      .phytosanitaries-response-p {
+        font-size: 1rem;
+      }
+
+      .ornamentals-response-p {
+        font-size: 1.125rem;
+      }
+
+      .ornamentals-title-p {
+        font-size: 1rem;
+      }
+
+      .adventices-title-p {
+        font-size: 1.125rem;
+      }
+
+      .adventices-response-p {
+        font-size: 1.25rem;
+      }
     }
 
   }
@@ -174,6 +208,93 @@ export default {
     .card {
       width: 25vw;
       height: 72vh;
+
+
+      .verso {
+        .response-logo {
+          font-size: 2.8rem;
+        }
+
+        h2,
+        h3 {
+          font-size: 1.875rem;
+        }
+
+        .adventices-title {
+          font-size: 2.5rem;
+        }
+
+        .phytosanitaries-title-p {
+          font-size: 1rem;
+        }
+
+        .phytosanitaries-response-p {
+          font-size: 1.125rem;
+        }
+
+        .ornamentals-response-p {
+          font-size: 1.3rem;
+        }
+
+        .ornamentals-title-p {
+          font-size: 1.1rem;
+        }
+
+        .adventices-title-p {
+          font-size: 1.5rem;
+        }
+
+        .adventices-response-p {
+          font-size: 1.875rem;
+        }
+
+        
+      }
+    }
+  }
+
+    @media screen and (min-width: 1500px) {
+    .card {
+      height: 62vh;     
+
+      .verso {
+
+        h2,
+        h3 {
+          font-size: 3.2rem;
+        }
+
+        .adventices-title {
+          font-size: 3.6rem;
+        }
+
+        .phytosanitaries-title-p {
+          font-size: 1.4rem;
+        }
+
+        .phytosanitaries-response-p {
+          font-size: 1.7rem;
+        }
+
+        .ornamentals-response-p {
+          font-size: 1.8rem;
+        }
+
+        .ornamentals-title-p {
+          font-size: 1.4rem;
+        }
+
+        .adventices-title-p {
+          font-size: 1.75rem;
+        }
+
+        .adventices-response-p {
+          font-size: 2rem;
+        }
+
+        
+      }
+      
     }
   }
 
