@@ -452,7 +452,7 @@ export default {
   }
   
 
-  @media screen and (min-width: 1500px) {
+  @media screen and (min-width: 1700px) {
     .card {
       height: 62vh;
 

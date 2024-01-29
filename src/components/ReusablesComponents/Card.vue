@@ -253,7 +253,7 @@ export default {
     }
   }
 
-    @media screen and (min-width: 1500px) {
+    @media screen and (min-width: 1700px) {
     .card {
       height: 62vh;     
 
@@ -261,7 +261,7 @@ export default {
 
         h2,
         h3 {
-          font-size: 3.2rem;
+          font-size: 3rem;
         }
 
         .adventices-title {
