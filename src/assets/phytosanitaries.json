@@ -36,7 +36,7 @@
     "prevention": null
   },
   "04": {
-    "image": "photo",
+    "image": "Mineuse",
     "name": "Mouche-Chenille mineuse",
     "nickname": null,
     "family": "larve papillon, diptère, hyménoptère",
@@ -60,7 +60,7 @@
     "prevention": null
   },
   "06": {
-    "image": "photo",
+    "image": "Araignée_rouge",
     "name": "Araignée rouge",
     "nickname": null,
     "family": "acarien",
@@ -108,7 +108,7 @@
     "prevention": null
   },
   "10": {
-    "image": "photo",
+    "image": "Limace",
     "name": "Limace",
     "nickname": null,
     "family": "gastéropode",
@@ -120,7 +120,7 @@
     "prevention": null
   },
   "11": {
-    "image": "photo",
+    "image": "Nematode",
     "name": "Nématode",
     "nickname": null,
     "family": "ver microscopique",
@@ -132,7 +132,7 @@
     "prevention": "Œillets d'inde"
   },
   "12": {
-    "image": "photo",
+    "image": "Souris",
     "name": "Souris",
     "nickname": null,
     "family": "mammifère",
@@ -144,7 +144,7 @@
     "prevention": null
   },
   "13": {
-    "image": "photo",
+    "image": "Oidium",
     "name": "Oïdium",
     "nickname": null,
     "family": "champignon",
@@ -156,7 +156,7 @@
     "prevention": null
   },
   "14": {
-    "image": "photo",
+    "image": "Botrytis",
     "name": "Botrytis",
     "nickname": null,
     "family": "champignon",
@@ -168,7 +168,7 @@
     "prevention": null
   },
   "15": {
-    "image": "photo",
+    "image": "Fumagine",
     "name": "Fumagine",
     "nickname": null,
     "family": "champignon",
@@ -180,7 +180,7 @@
     "prevention": null
   },
   "16": {
-    "image": "photo",
+    "image": "Rouille",
     "name": "Rouille",
     "nickname": null,
     "family": "champignon",
